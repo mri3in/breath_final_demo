@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  
+  <script src="../js/jquery-2.1.4.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/partialsScript.js"></script>
+  <script src="../lib/angular/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
+  <title>User</title>
+</head>
+<body>
+
+<div id="header"></div>
+
+<div class="container">
+    <h1>Manage Staff and Users</h1>
+    <!-- Form Control -->    
+            <table>
+                <tr>
+                    <!--create button for creating new item | delete item-->
+                    <td>
+                        <a class="btn btn-default" data-toggle="tooltip" title="Create New User" href="create_user.html">
+                        <span class="fa fa-plus" ></span></a> 
+						<a class="btn btn-primary" data-toggle="tooltip" title="Authority" href="authority.html">Authority</a>
+						<button class="btn btn-danger"name="deleteUser" value="Delete"  onClick="setUserAction();">
+						<i class="fa fa-trash-o" data-toggle="tooltip" title="Delete User"></i></button>
+                    </td>
+
+                </tr>
+            </table>
+    <div class="container">
+    <table class="table-striped">
+      <tr>
+        <th rowspan="2"></th>
+        <th rowspan="2">Staff ID</th>
+        <th rowspan="2">Staff Name</th>
+        <th rowspan="2">Role</th>
+        <th rowspan="2">Started date</th>
+        <th colspan="2">Accessible Pages </th>
+      </tr>
+      <tr>
+        <td>Inventory</td>
+        <td>Sales</td>
+        <td>User</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>S000</td>
+        <td>Admin</td>
+        <td>CEO</td>
+        <td>1/1/1996</td>
+        <td><span class="glyphicon glyphicon-ok"></span></td>
+        <td><span class="glyphicon glyphicon-ok"></span></td>
+        <td><span class="glyphicon glyphicon-ok"></span></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>S001</td>
+        <td>Lam</td>
+        <td>Sale executive</td>
+        <td>2/1/2013</td>
+        <td><span class="glyphicon glyphicon-ok"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>S002</td>
+        <td>Phong</td>
+        <td>Warehouse manager</td>
+        <td>1/12/2014</td>
+        <td><span class="glyphicon glyphicon-ok"></span></td>
+        <td></td>
+        <td><</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>S004</td>
+        <td>Tuan</td>
+        <td>Accounting</td>
+        <td>21/2/2012</td>
+        <td><span class="glyphicon glyphicon-ok"></span></td>
+        <td><span class="glyphicon glyphicon-ok"></td>
+        <td><span class="glyphicon glyphicon-ok"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>S006</td>
+        <td>Cuong</td>
+        <td>Logistic</td>
+        <td>25/6/2015</td>
+        <td><span class="glyphicon glyphicon-ok"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    </div>
+</div>
+<div id="footer"></div>
+
+</body>
+</html>

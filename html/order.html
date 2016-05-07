@@ -1,0 +1,108 @@
+<?php
+    //include the definition of database
+    include("../config.php");
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--include the search JS-->
+		<script src="../js/deleteOrder.js"></script>
+        <!--<script src="../js/customScript.js" defer></script>
+        <script src="../js/jquery.dataTables.js"></script>
+        <script src="../js/datatables.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">-->
+
+       <script>
+            // the jQuery.dataTables.js sometimes takes longer time to load so we need to delay the assignment
+            $(window).load(setTimeout(assignDataTable('orderTable'), 900 ));
+
+            // enable redirection to go to correct tab
+            $(window).load(redirectTab());
+        </script>
+    </head>
+    
+    <body>
+        <form name="frmOrder" method="POST" action ="">
+            <div class="container">
+              <!--Page Title-->
+                <h1>Order</h1><br/>
+                <table>
+                    <tr>
+                        <!--Create | Edit | Delete Order-->
+                        <td>
+                            <a class="btn btn-default" href="create_order.html" data-toggle="tooltip" title="Create New Order"><span class="fa fa-plus" ></span></a>
+
+                            <button class="btn btn-danger" name="deleteOrder" value="Delete"  onClick="setOrderAction();" ><i class="fa fa-trash-o" data-toggle="tooltip" title="Delete Order"></i></button>
+
+                            <a href="order1.html" class="btn btn-primary">
+                            <i class="fa fa-file-pdf-o" data-toggle="tooltip" title="Generate Report" ></i></a>
+                        </td>
+
+                </table>
+
+                <br/><br/>
+
+                <!--display a table to load all the customer by default.-->
+                <div class="container" >
+                    <?php
+                        //load all the order by default
+                        //run sql to select all the order
+                        $sql = "SELECT customer_order.order_id, customer_order.order_create_date, customer_order.order_status, customer_order.customer_id, customer.customer_name, customer_order.order_total, customer_order.order_reference
+                            FROM customer_order
+                            JOIN customer
+                            ON customer_order.customer_id =customer.customer_id
+                            WHERE order_status <> 'Deleted'";
+
+                        //connect to db via $db and execute the sql
+                        $result = mysqli_query($db, $sql);
+
+                        //if the number of results is greater than 0, generate a table and load the data to its rows
+                        if (mysqli_num_rows($result) > 0) {
+                    ?>
+                    <!--generate a table-->
+                    <table class="table sortable" id="orderTable">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th>Order ID</th>
+                                <th>Creation date</th>
+                                <th>Status</th>
+                                <th>Customer name</th>
+                                <th>Order total value</th>
+                                <th>Order reference ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                // output data of each row
+                                while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                            <tr>
+                                <td><input type="checkbox" name="order[]"
+                                           value ="<?php echo $row['order_id'];?>"></td>
+                                <td>
+                                    <a href="edit_order.html?order_id=<?php echo $row['order_id'];?>">
+                                        <?php echo $row["order_id"];?>
+                                    </a>
+                                </td>
+                                <td><?php echo $row['order_create_date'];?></td>
+                                <td><?php echo $row['order_status'];?></td>
+                                <td><?php echo $row['customer_name'];?></td>
+                                <td><?php echo $row['order_total'];?></td>
+                                <td><?php echo $row['order_reference'];?></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                    <?php
+                        } else {
+                            echo "0 results";
+                        }
+                        mysqli_close($db); // Closing Connection
+                    ?>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

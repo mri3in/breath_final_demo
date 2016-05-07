@@ -1,0 +1,115 @@
+<?php
+    //include the definition of database
+    include('../config.php');
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--include the search JS-->
+        <!--<script src="../js/showSearchStorageLocation.js"></script>-->
+        <script src="../js/deleteStorageLocation.js"></script>
+		<!--<script src="../js/redirectTab.js"></script>-->
+        <script src="../js/customScript.js"></script>
+        <script src="../js/datatables.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
+
+        <!--disable enter key on the form in this page-->
+        <script>
+            // the jQuery.dataTables.js sometimes takes longer time to load so we need to delay the assignment
+            $(window).load(setTimeout(assignDataTable('storageLocationTable'), 30 ));
+
+            // enable redirection to go to correct tab
+            $(window).load(redirectTab());
+        </script>
+    </head>
+    
+    <body>
+        <form name="frmStorageLocation" method="POST" action ="">
+        <div class="container">
+          <!--Page Title-->
+          <h1>Storage Location</h1><br/>
+
+            <!-- Form Control -->
+            <table>
+                <tr>
+                    <!--create button for creating new item | delete item-->
+                    <td>
+                        <a class="btn btn-default" data-toggle="tooltip" title="Create New Storage Location" href="create_storage_location.html">
+                        <span class="fa fa-plus" ></span></a> 
+						<button class="btn btn-danger"name="deleteItem" value="Delete"  onClick="setDeleteStorageLocationAction();">
+						<i class="fa fa-trash-o" data-toggle="tooltip" title="Delete Item"></i></button>
+                    </td>    
+
+                </tr>
+            </table>
+                
+ 
+            <br/><br/>
+
+            <!--display a table to load all the item by default. in case of searching, load the result of the search-->
+            <div class="container "  >
+                <?php
+                    //load all the StorageLocation by default
+                    //run sql to select all the StorageLocation
+                    $sql = "SELECT storage_location.storage_location_id, storage_location.storage_location_shelf, storage_location.storage_location_row, storage_location.storage_location_column, storage_location.storage_location_condition, warehouse.warehouse_name
+					FROM storage_location
+					JOIN warehouse
+                    ON storage_location.storage_location_warehouse_id = warehouse.warehouse_id
+                    WHERE storage_location_condition <> 'Deleted'";
+
+                    //connect to db via $db and execute the sql
+                    $result = mysqli_query($db, $sql);
+
+                    //if the number of results is greater than 0, generate a table and load the data to its rows
+                    if (mysqli_num_rows($result) > 0) {
+                    echo "
+                        <table class='table sortable' id='storageLocationTable'>" . "
+                        <thead><tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>Shelf</th>
+                            <th>Row</th>
+							<th>Column</th>
+							<th>Condition</th>
+							<th>Warehouse Name</th>
+                        </tr></thead><tbody>";
+
+                        //fetch the results to table rows, the customer_name should have the link to the edit page
+                        $i=0;
+                        while ($row = mysqli_fetch_array($result)) {
+						if($i%2==0)
+						$classname="evenRow";
+						else
+						$classname="oddRow";
+						if(isset($classname));
+                            echo
+                            "<tr id=" . "link>" . "
+                            <td><input type=" . "checkbox name='storage_id[]'
+							value =".$row["storage_location_id"]."></td>
+                            <td>
+                                <a href=" . "edit_storage_location.html?storage_location_id=" . $row["storage_location_id"] .">
+                                " . $row["storage_location_id"]. "
+                                </a>
+                            </td>
+                            <td>" . $row["storage_location_shelf"]. "</td>
+                            <td>" . $row["storage_location_row"]. "</td>
+                            <td>" . $row["storage_location_column"]. "</td>
+                            <td>" . $row["storage_location_condition"]. "</td>
+                            <td>" . $row["warehouse_name"]. "</td>
+                        </tr>";
+                        }
+
+                        //close the table
+                        echo "</tbody></table>";
+                    } else {
+                    echo "0 results";
+                    }
+
+                    mysqli_close($db); // Closing Connection
+                ?>
+            </div>
+        </div>
+    </body>
+</html>
+

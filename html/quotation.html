@@ -1,0 +1,115 @@
+<?php
+    //include the definition of database
+    include('../config.php');
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--include the search JS-->
+		<script src="../js/deleteQuotation.js"></script>
+        <!--<script src="../js/customScript.js" defer></script>
+        <script src="../js/jquery.dataTables.js"></script>
+        <script src="../js/datatables.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">-->
+
+        <script>
+            // the jQuery.dataTables.js sometimes takes longer time to load so we need to delay the assignment
+            $(window).load(setTimeout(assignDataTable('quotationTable'), 900 ));
+
+            // enable redirection to go to correct tab
+            $(window).load(redirectTab());
+        </script>
+    </head>
+    
+    <body>
+        <form name="frmQuotation" method="POST" action ="">
+        <div class="container">
+          <!--Page Title-->
+          <h1>Quotation</h1><br/>
+            
+            
+          <table>
+            <tr>  
+                <!--Create | Edit | Delete Quotation-->
+                <td>
+                    <a class="btn btn-default" href="create_quotation.html" data-toggle="tooltip" title="Create New Quotation"><span class="fa fa-plus" ></span></a>
+					
+                    <button class="btn btn-danger" name="deleteQuotation" value="Delete"  onClick="setDeleteQuotationAction();" ><i class="fa fa-trash-o" data-toggle="tooltip" title="Delete Order"></i></button>
+
+                    <a href="../php/pdf/export_report.php" class="btn btn-primary"><span class="fa fa-file-pdf-o" data-toggle="tooltip" title="Generate Report"></span></a>
+                </td>
+                
+
+            </tr>  
+          </table>
+        
+        <br/><br/>
+        
+            <!--display a table to load all the Quotation by default. in case of searching,-->
+            <div class="container" >
+                <?php
+                    //load all the quotation by default
+                    //run sql to select all the order
+                    $sql = "SELECT quotation.quotation_id, quotation.quotation_create_date, quotation.quotation_close_date, quotation.quotation_status, quotation.customer_id, customer.customer_name, quotation.quotation_total
+                        FROM quotation
+                        JOIN customer
+                        ON quotation.customer_id =customer.customer_id
+                        WHERE quotation_status <> 'Deleted'";
+                    
+                    //connect to db via $db and execute the sql
+                    $result = mysqli_query($db, $sql);
+        
+                    //if the number of results is greater than 0, generate a table and load the data to its rows
+                    if (mysqli_num_rows($result) > 0) {
+                    echo "
+                        <!--generate a table-->
+                        <table class='table sortable' id='quotationTable'>
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Quotation ID</th>
+                                <th>Creation date</th>
+                                <th>Closing date</th>
+                                <th>Status</th>
+                                <th>Customer name</th>
+                                <th>Quotation total value</th>
+                            </tr>
+                            </thead><tbody>";
+                        // output data of each row
+                        $i=0;
+                        while ($row = mysqli_fetch_array($result)) {
+						if($i%2==0)
+						$classname="evenRow";
+						else
+						$classname="oddRow";
+						if(isset($classname));
+                        echo "
+                        <tr>
+                            <td><input type=" . "checkbox name='quotation[]' 
+							value =".$row['quotation_id']."></td>
+                            <td>
+                                <a href=" . "edit_quotation.html?quotation_id=" . $row['quotation_id'] .">
+                                " . $row["quotation_id"]. "
+                                </a>
+                            </td>
+                            <td>" . $row["quotation_create_date"]. "</td>
+                            <td>" . $row["quotation_close_date"]. "</td>
+                            <td>" . $row["quotation_status"]. "</td>
+                            <td>" . $row["customer_name"]. "</td>
+                            <td class=" . "numbers" . ">" . $row["quotation_total"]. "</td>
+                        </tr>";
+						$i++;
+                        }
+                        echo "</tbody></table>";
+                    } else {
+                    echo "0 results";
+                    }
+            
+                    mysqli_close($db); // Closing Connection
+                ?>
+            </div>
+        </div>
+        
+    </body>
+</html>

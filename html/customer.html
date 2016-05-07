@@ -1,0 +1,111 @@
+<?php
+    //include the definition of database
+    include("../config.php");
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../js/customerTable.js"></script>
+		<script src="../js/deleteCustomer.js"></script>
+        <!--<script src="../js/customScript.js" defer></script>-->
+        <!--<script src="../js/datatables.min.js"></script>-->
+        <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
+
+        <script>
+            // the jQuery.dataTables.js sometimes takes longer time to load so we need to delay the assignment
+            $(window).load(setTimeout(assignDataTable("customerTable"), 900 ));
+
+            // enable redirection to go to correct tab
+            $(window).load(redirectTab());
+        </script>
+    </head>
+    
+    <body>
+        <form name="frmCustomer" method="POST" action ="">
+            <div class="container">
+                <!--Page Title-->
+                <h1>Customer</h1><br/>
+
+                <!-- Form Control -->
+                <table>
+                    <tr>
+                        <!--create button for creating new customer | delete customer-->
+                        <td>
+                            <a class="btn btn-default" data-toggle="tooltip" title="Create New Customer" href="create_customer.html">
+                            <span class="fa fa-plus" ></span></a>
+                            <button class="btn btn-danger" name="delete" value="Delete"  onClick="setDeleteCustomerAction();" ><i class="fa fa-trash-o" data-toggle="tooltip" title="Delete Order"></i></button>
+                        </td>
+
+                    </tr>
+                </table>
+
+
+                <br/><br/>
+
+                <!--display a table to load all the customer by default.-->
+                <div class="container">
+                    <?php
+                        //load all the customer by default
+                        //run sql to select all the customer
+                        $sql = "SELECT *, staff.staff_name FROM customer JOIN staff ON customer.staff_id = staff.staff_id WHERE customer_status <> 'Deleted'";
+
+                        //connect to db via $db and execute the sql
+                        $result = mysqli_query($db, $sql);
+
+                        //if the number of results is greater than 0, generate a table and load the data to its rows
+                        if (mysqli_num_rows($result) > 0) {
+                    ?>
+
+                    <table class="table sortable" id="customerTable">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Customer Name</th>
+                                <th>Billing Address</th>
+                                <th>Responsible Staff Name</th>
+                                <th>Contact Person Name</th>
+                                <th>Contact Person Phone Number</th>
+                                <th>Contact Person Email</th>
+                                <th>Customer Status</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <?php
+                                //fetch the results to table rows, the customer_name should have the link to the edit page
+                                while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                            <tr id="link">
+                                <td><input type="checkbox" name="customer[]"
+                                value ="<?php echo $row['customer_id'];?>"></td>
+                                <td>
+                                    <a href="edit_customer.html?customer_id=<?php echo $row['customer_id'];?>">
+                                    <?php echo $row["customer_name"];?>
+                                    </a>
+                                </td>
+                                <td><?php echo $row["customer_billing_address"];?></td>
+                                <td><?php echo $row["staff_name"];?></td>
+                                <td><?php echo $row["customer_contact_person_name"];?></td>
+                                <td><?php echo $row["customer_contact_person_phone_number"];?></td>
+                                <td><?php echo $row["customer_contact_person_email"];?></td>
+                                <td><?php echo $row["customer_status"];?></td>
+                            </tr>
+                            <?php
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+
+                    <?php
+                        } else {
+                        echo "0 results";
+                        }
+                        mysqli_close($db); // Closing Connection
+                    ?>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
+

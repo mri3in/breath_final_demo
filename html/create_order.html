@@ -1,0 +1,55 @@
+<?php
+    //include the definition of database
+    include('../config.php');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/partialsScript.js"></script>
+    <script src="../lib/angular/angular.min.js"></script>
+    <script src="../js/gen_validatorv4.js"></script>
+    <script src="../js/customScript.js"></script>
+    <script src="../js/bootbox.min.js"></script>
+    <script src="../js/confirmScript.js"></script>
+    <script src="../js/countries.js"></script>
+
+</head>
+<body>
+    <?php
+        //get the desired customer by customer_id in URL
+        if (isset($_GET['quotation_id'])) {
+            //get the param in URL of customer_id
+            $convert_quotation_id = $_GET['quotation_id'];
+
+            //load all the quotation by default
+            //run sql to select all the quotation
+            $sql_quotation = "SELECT *, customer.customer_id, customer_name FROM quotation
+                    JOIN customer
+                         ON quotation.customer_id = customer.customer_id
+                    WHERE quotation.quotation_id = '$convert_quotation_id'";
+
+            //connect to db via $db and execute the sql
+            $result_quotation = mysqli_query($db, $sql_quotation);
+
+            //fetch the result to an array
+            $row_quotation = mysqli_fetch_assoc($result_quotation);
+
+            //include the convert template
+            include('create_order_convert_template.html');
+        }
+        else
+        {
+            include('create_order_no_convert_template.html');
+        }
+    ?>
+</body>
+</html>

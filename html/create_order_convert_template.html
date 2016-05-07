@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+<div id="header"></div>
+
+<div class="container">
+
+    <div class="row">
+        <form role="form" name="myForm" id="myForm" action="../php/create_order.php" method="post">
+
+            <h2 class="text-center">Order</h2>
+            <!-- define the note for * symbol-->
+            <div class="well well-sm col-sm-2 text-center"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
+            <!-- display the order ID -->
+            <div class="well well-sm col-sm-2 text-center pull-right"><strong>Order ID: </strong></div>
+
+            <div class="clearfix"></div>
+            <!--display quotation ID-->
+            <div class="well well-sm col-sm-2 text-center pull-right">
+                <strong>Quotation ID:
+                    <a href="edit_quotation.html?quotation_id=<?php echo $convert_quotation_id;?>"><input class='readonly' style='width:15%' name='order_reference' value="<?php echo $convert_quotation_id;?>"></a>
+                </strong>
+            </div>
+            <!--clear floating display style so that all input can display vertically-->
+            <div class="clearfix"></div>
+            <div class="form-group">
+
+                <label>Customer Name</label>
+                <div class="input-group col-sm-4">
+
+                    <input name="customer_name" class="form-control" readonly value="<?php echo $row_quotation['customer_name'];?>">
+                    <input id="customer_id" name="customer_id" class="form-control" readonly value="<?php echo $row_quotation['customer_id'];?>" hidden>
+
+
+                    <!--run the script to load corresponding customer details based on the change of customer name-->
+                    <script>
+                        $(window).load(setTimeout(displayCustomerDetails("<?php echo $row_quotation['customer_id'];?>",'dataTableCustomer'),30));
+                    </script>
+
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+
+            <!--Display customer information as user select from select input above-->
+                <fieldset id="dataTableCustomer">
+                    <legend>Basic Information</legend>
+                    <div>
+                        <!--start of defining tabs-->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#general_details" data-toggle="tab">General Details</a></li>
+                            <li><a href="#address" data-toggle="tab">Billing/Shipping Address</a></li>
+                            <li><a href="#payment" data-toggle="tab">Payment</a></li>
+                        </ul>
+                        <!--end of defining tabs-->
+
+                        <!--start of displaying the fields in tabs-->
+                        <div class="tab-content">
+                            <!--start of displaying general details tab-->
+                            <div class="tab-pane active" id="general_details">
+                                <br>
+                                <!--start of displaying in 2 columns-->
+                                <div class="container-fluid">
+                                    <!--start of displaying left column-->
+                                    <div class="form-group col-sm-8">
+                                        <!--start of displaying name-->
+                                        <div class="form-group col-sm-5">
+                                            <label>Short Name</label>
+                                            <!--display the error line of code-->
+                                            <div id="myForm_customer_name_errorloc" class="error"></div>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Customer Short Name"  >
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-7">
+                                            <label>Long Name</label>
+                                            <!--display the error line of code-->
+                                            <div id="myForm_customer_long_name_errorloc" class="error"></div>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="customer_long_name" name="customer_long_name" placeholder="Customer Long Name" >
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                            </div>
+                                        </div>
+                                        <!--end of displaying name-->
+
+                                        <!--start of displaying customer tax code-->
+                                        <div class="form-group col-sm-4">
+                                            <label>Tax Code</label>
+                                            <!--display the error line of code-->
+                                            <div id="myForm_customer_tax_code_errorloc" class="error"></div>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="customer_tax_code" name="customer_tax_code" placeholder="Tax Code" >
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                            </div>
+                                        </div>
+                                        <!--end of displaying customer tax code-->
+
+                                        <div class="form-group col-sm-1"></div>
+
+                                        <!--start of displaying customer phone number-->
+                                        <div class="form-group col-sm-4">
+                                            <label>Phone Number</label>
+                                            <!--display the error line of code-->
+                                            <div id="myForm_customer_phone_number_errorloc" class="error"></div>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="customer_phone_number" name="customer_phone_number" placeholder="Phone Number" >
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                            </div>
+                                        </div>
+                                        <!--end of displaying customer phone number-->
+                                    </div>
+                                    <!--end of displaying left column-->
+
+                                    <!--start of displaying right column-->
+                                    <div class="form-group col-sm-4">
+                                            <!--start of displaying customer status-->
+                                            <div class="form-group col-sm-12">
+                                                <label>Customer Status</label><br>
+                                                <!--status of customer -->
+                                                <input id="customer_status" class="form-control" name="customer_status">
+                                            </div>
+                                            <!--end of displaying customer status-->
+
+                                            <!--start of displaying customer accountable salesperson-->
+                                            <div class="form-group col-sm-12">
+                                                <label>Salesperson Accountable</label>
+                                                <!--display the error line of code-->
+                                                <div id="myForm_staff_id_errorloc" class="error"></div>
+                                                <div class="input-group">
+                                                    <!--select staff on the list-->
+                                                    <input id="staff_id" name="staff_id" class="form-control">
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                                </div>
+                                            </div>
+                                            <!--end of displaying customer accountable salesperson-->
+                                    </div>
+                                    <!--end of displaying right column-->
+                                </div>
+                                <!--end of displaying in 2 columns-->
+                            </div>
+                            <!--end of displaying customer general details tab-->
+
+                            <!--start of displaying customer address tab-->
+                            <div class="tab-pane" id="address">
+                                <br>
+                                <!--start of displaying customer billing address-->
+                                <div class="form-group col-sm-6" style="border-right: thin solid #EEEEEE">
+                                    <label>Billing Address</label>
+                                    <br>
+                                    <!--start of displaying customer billing address street-->
+                                    <div class="form-group col-sm-10">
+                                        <label>Street</label>
+                                        <!--display the error line of code-->
+                                        <div id="myForm_customer_billing_address_street_errorloc" class="error"></div>
+                                        <div class="input-group">
+                                            <input type="text" style="min-width:100%" class="form-control" id="customer_billing_address_street" name="customer_billing_address_street" placeholder="Street" >
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                    </div>
+                                    <!--end of displaying customer billing address street-->
+
+                                    <div class="clearfix"></div>
+
+                                    <!--start of displaying customer billing address country-->
+                                    <div class="form-group col-sm-5">
+                                        <label>Country</label>
+                                        <!--display the error line of code-->
+                                        <div id="myForm_customer_billing_address_country_errorloc" class="error"></div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" style="min-width:100%" id="customer_billing_address_country" name="customer_billing_address_country" placeholder="Country">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                    </div>
+                                    <!--end of displaying customer billing address country-->
+
+                                    <!--start of displaying customer billing address city-->
+                                    <div class="form-group col-sm-5">
+                                        <label>City</label>
+                                        <!--display the error line of code-->
+                                        <div id="myForm_customer_billing_address_city_errorloc" class="error"></div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" style="min-width:100%" id="customer_billing_address_city" name="customer_billing_address_city" placeholder="City / State">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                    </div>
+                                    <!--end of displaying customer billing address city-->
+                                </div>
+                                <!--end of displaying customer billing address-->
+
+                                <!--start of displaying customer shipping address-->
+                                <div class="form-group col-sm-6">
+                                    <label>Shipping Address</label>
+                                    <br>
+                                    <!--start of displaying customer shipping address street-->
+                                    <div class="form-group col-sm-10">
+                                        <label>Street</label>
+                                        <!--display the error line of code-->
+                                        <div id="myForm_customer_shipping_address_street_errorloc" class="error"></div>
+                                        <div class="input-group">
+                                            <input type="text" style="min-width:100%" class="form-control" id="customer_shipping_address_street" name="customer_shipping_address_street" placeholder="Street" >
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                    </div>
+                                    <!--end of displaying customer shipping address street-->
+
+                                    <!--start of displaying customer shipping address country-->
+                                    <div class="form-group col-sm-5">
+                                        <label>Country</label>
+                                        <!--display the error line of code-->
+                                        <div id="myForm_customer_shipping_address_country_errorloc" class="error"></div>
+                                        <div class="input-group">
+                                            <select id="customer_shipping_address_country" class="form-control" style="min-width:100%" name="customer_shipping_address_country"></select>
+                                            <!--<input type="text" style="min-width:100%" class="form-control" name="customer_shipping_address_country" placeholder="Country" > -->
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                    </div>
+                                    <!--end of displaying customer shipping address country-->
+
+                                    <!--start of displaying customer shipping address city-->
+                                    <div class="form-group col-sm-5">
+                                        <label>City</label>
+                                        <!--display the error line of code-->
+                                        <div id="myForm_customer_shipping_address_city_errorloc" class="error"></div>
+                                        <div class="input-group">
+                                            <select id="customer_shipping_address_city" class="form-control" style="min-width:100%" name="customer_shipping_address_city"></select>
+                                            <!--<input type="text" style="min-width:90%" class="form-control" name="customer_shipping_address_city" placeholder="City" >-->
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                    </div>
+                                    <!--end of displaying customer shipping address city-->
+
+                                    <!--script to load city in case user changes the shipping address-->
+                                    <script language="javascript">
+                                        populateCountries("customer_shipping_address_country", "customer_shipping_address_city");
+                                    </script>
+                                </div>
+                                <!--end of displaying customer shipping address-->
+                            </div>
+                            <!--end of displaying customer address tab-->
+
+                            <!--start of displaying payment tab-->
+                            <div class="tab-pane" id="payment">
+                                <br>
+                                <!--start of displaying credit limit-->
+                                <div class="form-group col-sm-3">
+                                    <label>Customer Credit Limit</label>
+                                    <!--display the error line of code-->
+                                    <div id="myForm_customer_credit_limit_errorloc" class="error"></div>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="customer_credit_limit" name="customer_credit_limit" placeholder="Customer Credit Limit">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                    </div>
+                                </div>
+                                <!--end of displaying credit limit-->
+
+                                <!--start of displaying current credit-->
+                                <div class="form-group col-sm-3">
+                                    <label>Customer Current Credit</label>
+                                    <!--display the error line of code-->
+                                    <div id="myForm_customer_current_credit_errorloc" class="error"></div>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="customer_current_credit" name="customer_current_credit" placeholder="Customer Current Credit">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                    </div>
+                                </div>
+                                <!--end of displaying current credit-->
+                                
+                                <div class="clearfix"></div>
+
+                                <!--start of displaying customer payment term -->
+                                <div class="form-group col-sm-3">
+                                    <label>Customer Payment Term</label>
+                                    <!--display the error line of code-->
+                                    <div id="myForm_customer_payment_term_errorloc" class="error"></div>
+                                    <div class="input-group">
+                                        <!--select payment term on the list-->
+                                        <select id="customer_payment_term" name="customer_payment_term" class="form-control">
+
+                                            <option value="0" selected disabled>Select a Payment Term</option>
+
+                                            <?php
+                                                //set up the sql to select the record that has the corresponding payment_term_id
+                                                $sql_payment_term_select = "SELECT DISTINCT customer_payment_term FROM customer";
+
+                                                //run the query to get the payment_term
+                                                $query_payment_term_select = mysqli_query($db,$sql_payment_term_select);
+
+                                                //fetch the result to an array
+                                                while($row_payment_term_select = mysqli_fetch_assoc($query_payment_term_select)) {
+                                            ?>
+
+                                            <option value="<?php echo $row_payment_term_select['customer_payment_term'];?>"><?php echo $row_payment_term_select['customer_payment_term'];?></option>
+
+                                            <?php } ?>
+                                        </select>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                    </div>
+                                </div>
+                                <!--end of displaying customer payment term-->
+                            </div>
+                            <!--end of displaying payment tab-->
+                        </div>
+                        <!--end of displaying the fields in tabs-->
+                    </div>
+                </fieldset>
+            <div class="form-group hidden">
+                <label>Order Status</label>
+                <div class="input-group col-sm-4">
+                    <input name="order_status" class="form-control" readonly value="Processed">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+            <!--Order line starts here-->
+            <!--connect db to load order line data-->
+            <?php
+                $sql_quotation_line = "SELECT
+                    quotation.quotation_id, quotation.quotation_create_date, quotation.quotation_status, quotation.customer_id,
+                    customer.customer_name, customer.customer_id,
+                    quotation.quotation_total, quotation.quotation_net_total, quotation.quotation_tax,
+                    quotation_line.quotation_line_id, quotation_line.quotation_line_item_id, quotation_line.quotation_line_item_quantity, quotation_line.quotation_line_item_total_value, quotation_line.quotation_line_estimate_price, quotation_line.quotation_line_estimate_net_price,
+                    item.item_name,item.item_unit_of_measurement, item.item_vendor, item.item_manufacturer, item.item_unit_price, item.item_VAT
+                FROM quotation
+                JOIN customer
+                    ON quotation.customer_id =customer.customer_id
+                JOIN quotation_line
+                    ON quotation.quotation_id = quotation_line.quotation_id
+                JOIN item
+                    ON quotation_line.quotation_line_item_id = item.item_id
+                WHERE quotation.quotation_id = '$convert_quotation_id'";
+
+                //run the query to get the required details
+                $query_quotation_line = mysqli_query($db,$sql_quotation_line) or die ("Error: Cannot found quotation lines");
+            ?>
+
+            <!--Dynamic Form Processing with PHP-->
+            <div class="form-group">
+                <legend>Order Line</legend>
+
+                <input type="button" class="btn btn-success fa" value="&#xf0fe;" style='width:4%' title="Add New Row To Item Line" onClick="addRow('dataTableOrder', 'order')" />
+                <input type="button" class="btn btn-danger fa" value="&#xf147;" style='width:4%' title="Delete Checked Rows of the Item Line" onClick="deleteRow('dataTableOrder', 'order')"  />
+
+                <p>(All actions apply only to entries with check marked check boxes only.)</p>
+                <div id="myForm_errorloc" class="error"></div>
+                <table id="dataTableOrder" class="table">
+                    <tr>
+                        <th></th>
+                        <th hidden>
+                            <label hidden>Order Line ID</label>
+                        </th>
+                        <th>
+                            <label>Item Name</label>
+                        </th>
+                        <th>
+                            <label>Manufacturer</label>
+                        </th>
+                        <th style="width:5%">
+                            <label>Quantity</label>
+                        </th>
+                        <th style="width:7%">
+                            <label>Vendor</label>
+                        </th>
+                        <th style="width:5%">
+                            <label>Delivery Date</label>
+                        </th>
+                        <th style="width:10%">
+                            <label>Selling price</label>
+                        </th>
+                        <th>
+                            <label>Net selling price</label>
+                        </th>
+                        <th style="width:6%">
+                            <label>Tax</label>
+                        </th>
+                    </tr>
+
+                    <!--start to load and display the order lines of this order-->
+                    <?php
+                        //fetch the result to an array
+                        // multidimension array source: http://www.w3schools.com/php/php_arrays_multi.asp
+                        while($row_quotation_line = mysqli_fetch_assoc($query_quotation_line)){
+                            $array_quotation_line[] = $row_quotation_line;}
+                        //for each element of array, load a different record
+                        for ($array_count = 0; $array_count < count($array_quotation_line); $array_count++){
+                    ?>
+
+                    <tr id="row-<?php echo $array_count;?>">
+                        <td id="row-<?php echo $array_count;?>_col-0"><input type="checkbox"  name="chk[]"/></td>
+                        <td id="row-<?php echo $array_count;?>_col-1" hidden>
+                            <input type="text" style="width:90%" hidden  name="order_line_id[]" value="<?php echo $array_quotation_line[$array_count]['quotation_line_id'];?>">
+                        </td>
+                        <td id="row-<?php echo $array_count;?>_col-2">
+                            <!--load all the item in the item table. display item name and store item id as value of option -->
+                            <select id="item_id_select_<?php echo $array_count;?>" style="width:300px" name="item_id[]" class="form-control" onchange="displayItemDetails(this.value, this.id,'order')">
+                                <?php
+                                    //set up sql query to list all items
+                                    $sql_item_select = "SELECT item_id, item_name FROM item";
+                                    //connect to db via $db and execute the sql
+                                    $result_item_select = mysqli_query($db, $sql_item_select);
+                                    //fetch the result to an array
+                                    while($row_item_select = mysqli_fetch_assoc($result_item_select))
+                                    {
+                                        $selected = ($row_item_select['item_id'] == $array_quotation_line[$array_count]['quotation_line_item_id']) ? "selected='selected'" : "";
+                                        echo "<option value=" . $row_item_select['item_id'] . " " . $selected . ">" . $row_item_select['item_name'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                            <!--<?php echo $array_order_line[$array_count]['item_name'];?>-->
+                        </td>
+                        <td id="row-<?php echo $array_count;?>_col-3">
+                            <input type="text" style="width:90%"  name="item_manufacturer[]" class="form-control" value="<?php echo $array_quotation_line[$array_count]['item_manufacturer'];?>">
+                        </td>
+                        <td id="row-<?php echo $array_count;?>_col-4">
+                            <input type="text" style="width:100%"  class="form-control" oninput="totalOrderTax('row-<?php echo $array_count;?>')" name="order_line_item_quantity[]" min="0" value="<?php echo $array_quotation_line[$array_count]['quotation_line_item_quantity'];?>">
+                        </td>
+                        <td id="row-<?php echo $array_count;?>_col-5">
+                            <input type="text" style="width:90%"  name="item_vendor[]" class="form-control" value="<?php echo $array_quotation_line[$array_count]['item_vendor'];?>">
+                        </td>
+                        <td id="row-<?php echo $array_count;?>_col-6">
+                            <input type="date" style="width:90%" name="order_line_delivery_date[]" class="form-control" value="">
+                            <!--<?php echo date('Y/m/d', strtotime($array_order_line[$array_count]['order_line_deliver_date']));?>-->
+                        </td>
+                        <td id="row-<?php echo $array_count;?>_col-7">
+                            <input type="text" style="width:90%" class="form-control" oninput="totalOrderTax('row-<?php echo $array_count;?>')" name="order_line_selling_price[]" min="0" value="<?php echo $array_quotation_line[$array_count]['item_unit_price'];?>">
+                        </td>
+                        <td id="row-<?php echo $array_count;?>_col-8">
+                            <input type="text" style="width:90%" class="form-control" name="order_line_net_selling_price[]" min="0" value="<?php echo $array_quotation_line[$array_count]['quotation_line_estimate_net_price'];?>">
+                        </td>
+                        <td id="row-<?php echo $array_count;?>_col-9">
+                            <input type="text" style="width:90%" class="form-control" oninput="totalOrderTax('row-<?php echo $array_count;?>')" name="item_VAT[]" value="<?php echo $array_quotation_line[$array_count]['item_VAT'];?>" >
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </table>
+                <div class="clear"></div>
+                <!--check this link for reference http://techstream.org/Web-Development/PHP/Dynamic-Form-Processing-with-PHP -->
+            </div>
+
+            <div class="form-group">
+                <label>Note</label>
+                <div class="input-group">
+                    <textarea name="order_note" class="form-control" rows="2"><?php echo $row_quotation['quotation_note'];?></textarea>
+                    <span class="input-group-addon"><span class="glyphicon"></span></span>
+                </div>
+            </div>
+
+            <div class="form-group pull-right">
+                <table>
+                    <tr>
+                        <td class="text-right"><label>Net Total Price (Tax exl):</label></td>
+                        <td> <input name="net_total_price" class="readonly numbers" id="total" value="<?php echo $row_quotation['quotation_net_total'];?>"  readonly > </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right"><label>Tax:</label></td>
+                        <td> <input name="tax" id="totalTax" class="readonly" value="<?php echo $row_quotation['quotation_tax'];?>"  readonly> </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right"><label>Total Price (Tax incl):</label></td>
+                        <td> <input name="total_order" id="totalOrder" class="readonly" value="<?php echo $row_quotation['quotation_total'];?>" readonly > </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clearfix"></div>
+            <!-- display the quotation convert option -->
+            <div class="pull-right checkbox" style="display: none">
+                <input type="checkbox" name="convert_quotation" checked>Converted to Order after submission</input>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="form-group pull-right" style="display: inline-block;vertical-align: bottom;">
+                <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+<!--script to validate inputs
+Reference: http://www.javascript-coder.com/html-form/javascript-form-validation.phtml/comment-page-6#comments-->
+<script language="JavaScript" type="text/javascript">
+    //You should create the validator only after the definition of the HTML form
+
+    var frmvalidator  = new Validator("myForm");
+    frmvalidator.EnableOnPageErrorDisplaySingleBox();
+    frmvalidator.EnableMsgsTogether();
+
+    frmvalidator.addValidation("order_line_item_quantity","req","Please select quantity");
+    frmvalidator.addValidation("order_line_delivery_date","req","Please select date of delivery");
+    frmvalidator.addValidation("order_line_selling_price","req","Please select selling price");
+    frmvalidator.addValidation("item_VAT","req","Please enter Tax Percentage");
+
+    function myFunction() {
+        document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
+    }
+
+</script>
+</body>
+</html>
