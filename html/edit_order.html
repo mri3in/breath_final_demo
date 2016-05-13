@@ -1,6 +1,6 @@
 <?php
     //include the definition of database
-    include('../config.php');
+    include('../php/session.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,15 +14,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="../js/jquery-2.1.4.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/partialsScript.js"></script>
+    
     <script src="../lib/angular/angular.min.js"></script>
     <script src="../js/gen_validatorv4.js"></script>
     <script src="../js/displayCustomerDetails.js"></script>
     <script src="../js/orderLineCalculate.js"></script>
     <script src="../js/bootbox.min.js"></script>
     <script src="../js/confirmScript.js"></script>
-    <script src="../js/currencyFormat.js"></script>
     <script src="../js/customScript.js"></script>
+    <script src="../js/currencyFormat.js"></script>
     <script src="../js/countries.js"></script>
     
 </head>
@@ -526,7 +526,7 @@
                 <table>
                     <tr>
                         <td class="text-right"><label>Net Total Price (Tax exl):</label></td>
-                        <td> <input name="net_total_price" class="readonly numbers" id="netTotal" value="<?php echo $row['order_net_total'];?>"  readonly > </td>
+                        <td> <input name="net_total_price" class="readonly" id="netTotal" value="<?php echo $row['order_net_total'];?>"  readonly > </td>
                     </tr>
                     <tr>
                         <td class="text-right"><label>Tax:</label></td>
@@ -540,7 +540,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="form-group pull-right" style="display: inline-block;vertical-align: bottom;">
-                <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">
+                <input type="submit" name="submit" id="submit" value="Update" class="btn btn-default">
             </div>
         </form>
     </div>

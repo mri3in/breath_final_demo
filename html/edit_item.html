@@ -1,6 +1,6 @@
 <?php
 //include the definition of database
-include('../config.php');
+    include('../php/session.php');
 ?>
 
 <!DOCTYPE html>
@@ -414,34 +414,39 @@ var frmvalidator  = new Validator("myForm");
 frmvalidator.EnableOnPageErrorDisplay();
 frmvalidator.EnableMsgsTogether();
 
-frmvalidator.addValidation("item_name","req","Customer Name is required");
-frmvalidator.addValidation("item_long_name","req","Customer Long Name is required");
+frmvalidator.addValidation("item_id","req","Item Id is required");
+frmvalidator.addValidation("item_name","req","Item Name is required");
 
-frmvalidator.addValidation("item_billing_address_street","req","Billing Address is required");
-frmvalidator.addValidation("item_billing_address_city","req","Billing Address is required");
-frmvalidator.addValidation("item_billing_address_country","req","Billing Address is required");
+frmvalidator.addValidation("item_category","req","Please select item category");
+frmvalidator.addValidation("item_vendor","req","Vendor of item is required");
+frmvalidator.addValidation("item_manufacturer","req","Manufacturer of item is required");
 
-frmvalidator.addValidation("item_tax_code","req","Tax Code is required");
-frmvalidator.addValidation("item_tax_code","num","Tax Code is numeric only");
+frmvalidator.addValidation("item_power","num","Item power is numeric only");
+frmvalidator.addValidation("item_power_unit","req","Please specify power unit");
+frmvalidator.addValidation("item_phase","num","Item phase is numeric only");
+frmvalidator.addValidation("item_voltage_low","num","Item voltage low is numeric only");
+frmvalidator.addValidation("item_voltage_high","num","Item voltage high is numeric only");
+frmvalidator.addValidation("item_capacity","num","Item capacity is numeric only");
+frmvalidator.addValidation("item_frequency","num","Item frequency is numeric only");
 
-frmvalidator.addValidation("staff_id","req","Sale Person Accountable is required");
+frmvalidator.addValidation("item_power","req","Please specify item power");
+frmvalidator.addValidation("item_phase","req","Please specify item phase");
+frmvalidator.addValidation("item_voltage_low","req","Please specify item voltage low");
+frmvalidator.addValidation("item_voltage_high","req","Please specify item voltage high");
+frmvalidator.addValidation("item_capacity","req","Please specify item capacity");
+frmvalidator.addValidation("item_frequency","req","Please specify item frequency");
 
-frmvalidator.addValidation("item_contact_person_name","req","Contact person name is required");
+frmvalidator.addValidation("item_unit_price","req","Please specify item unit price");
+frmvalidator.addValidation("item_vat","req","Please specify item vat");
 
-frmvalidator.addValidation("item_contact_person_phone_number","req","Contact person phone number is required");
-frmvalidator.addValidation("item_contact_person_phone_number","phone","Contact person phone number is numeric only");
+frmvalidator.addValidation("item_area","req","Please specify item area");
+frmvalidator.addValidation("item_area","num","Item area is numeric only");
 
-frmvalidator.addValidation("item_contact_person_email","req","Contact person email is required");
-frmvalidator.addValidation("item_contact_person_email","email","Contact person email is required");
 
-frmvalidator.addValidation("item_shipping_address_street","req","Shipping Address Street is required");
-frmvalidator.addValidation("item_shipping_address_city","req","Shipping Address City is required");
-frmvalidator.addValidation("item_shipping_address_country","req","Shipping Address Country is required");
+frmvalidator.addValidation("item_unit_of_measurement","num","Item unit of measurement is required");
 
-frmvalidator.addValidation("item_credit_limit","req","Credit Limit is required");
-frmvalidator.addValidation("item_credit_limit","num","Credit Limit is required");
-
-frmvalidator.addValidation("item_payment_term","req","Payment Term is required");
+frmvalidator.addValidation("item_diameter","req","Please specify item diameter");
+frmvalidator.addValidation("item_diameter","num","Item diameter is numeric only");
 
 </script>
 

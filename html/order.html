@@ -1,6 +1,6 @@
 <?php
     //include the definition of database
-    include("../config.php");
+    include('../php/session.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,6 +8,7 @@
     <head>
         <!--include the search JS-->
 		<script src="../js/deleteOrder.js"></script>
+        <script src="../js/currencyFormat.js"></script>
         <!--<script src="../js/customScript.js" defer></script>
         <script src="../js/jquery.dataTables.js"></script>
         <script src="../js/datatables.min.js"></script>
@@ -89,7 +90,7 @@
                                 <td><?php echo $row['order_create_date'];?></td>
                                 <td><?php echo $row['order_status'];?></td>
                                 <td><?php echo $row['customer_name'];?></td>
-                                <td><?php echo $row['order_total'];?></td>
+                                <td class='numbers'><?php echo $row['order_total'];?></td>
                                 <td><?php echo $row['order_reference'];?></td>
                             </tr>
                             <?php } ?>

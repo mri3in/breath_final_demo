@@ -3,8 +3,6 @@ body { padding-top: 70px;
   -webkit-font-smoothing: antialiased;
 }
 
-
-
 .navbar-default .navbar-brand {color: LightSkyBlue;
               font-size:200%;
               transition: all .5s ease;
@@ -206,8 +204,8 @@ table select { height:25px;
 /*.form-control{width: auto;display: inline}*/
 
 .ms-container{
-  background: transparent url('../img/switch.png') no-repeat 50% 50%;
-  width: 370px;
+  background: transparent url('../images/switch.png') no-repeat 50% 50%;
+  width: 100%;
 }
 
 .ms-container:after{
@@ -298,3 +296,118 @@ table select { height:25px;
   color: #aaa;
   cursor: text;
 }
+
+/* Notification CSS / Author: Lam / Source: http://www.9lessons.info/2014/09/facebook-style-notification-popup-using.html*/
+#notification_li
+{
+  position:relative
+}
+
+#notificationContainer 
+{
+  background-color: #fff;
+  border: 1px solid rgba(100, 100, 100, .4);
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  overflow: visible;
+  position: absolute;
+  top: 30px;
+  margin-left: -170px;
+  width: 430px;
+  z-index: -1;
+  display: none;
+}
+
+#notificationContainer:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  color: transparent;
+  border: 10px solid black;
+  border-color: transparent transparent white;
+  margin-top: -20px;
+  margin-left: 188px;
+}
+
+#notificationTitle
+{
+  font-weight: bold;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 1000;
+  width: 384px;
+  border-bottom: 1px solid #dddddd;
+}
+
+#notificationsBody
+{
+  padding: 33px 0px 0px 0px !important;
+  min-height:300px;
+  height:450px;
+  overflow-y: scroll;
+  overflow-x: hidden; /*hide the horizontal scroll bar at the bottom*/
+}
+
+#notificationFooter
+{
+  background-color: #e9eaed;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px;
+  font-size: 12px;
+  border-top: 1px solid #dddddd;
+}
+
+.notification_datetime {
+  font-style: italic;
+  font-size:12px;
+  color: #999;
+  margin-top: 10px;
+}
+
+.Unread {
+  background-color: #f6f6f6;
+}
+
+.Read {
+  background-color: #fff;
+}
+
+.Unread, .Read a {
+  color: inherit;
+  text-decoration: inherit;
+  
+}
+
+.notification{
+  height: 70px;
+}
+
+.badge {
+  background-color: #CB4335;  
+}
+
+.table-hover tr:hover td, .table-hover tr:hover th {
+  background-color: #e5e5e5;
+}
+
+.btn-circle {
+  width: 20px;
+  height: 20px;
+  padding: 2px 0;
+  line-height: 1;
+  border-radius: 10px;
+}
+
+.notibutton_1 {
+  color: #5cb85c;
+}
+.notibutton_2 {
+  color: #CFD51E;
+}
+
+
+/* End of css for notification table*/

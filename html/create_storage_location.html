@@ -1,6 +1,6 @@
 <?php
     //include the definition of database
-    include('../config.php');
+    include('../php/session.php');
 ?>
 
 <!DOCTYPE html>
@@ -47,20 +47,18 @@
                          <select id="warehouse_id_select" name="warehouse_id" class="form-control" onchange="displayWarehouseDetails(document.getElementById('warehouse_id_select').value)">
                             <option value="0" selected disabled>--Please Select Warehouse--</option>
                             <?php
-                             //get the desired Warehouse by Warehouse_id in URL
-
-                            //set up the sql to select the record that has the corresponding warehouse_id
-                            $sql_warehouse_select = "SELECT warehouse.warehouse_id,warehouse.warehouse_name FROM warehouse";
-
-                            //run the query to get the warehouse
-                            $query_warehouse_select = mysqli_query($db,$sql_warehouse_select);
-
-                            //fetch the result to an array
-                            while($row_warehouse_select = mysqli_fetch_assoc($query_warehouse_select)) {
-
-                            echo "<option id ='myselect'value=".$row_warehouse_select["warehouse_id"].">".$row_warehouse_select["warehouse_name"]."</option>";
-
-                             }
+                                 //get the desired Warehouse by Warehouse_id in URL
+    
+                                //set up the sql to select the record that has the corresponding warehouse_id
+                                $sql_warehouse_select = "SELECT warehouse.warehouse_id,warehouse.warehouse_name FROM warehouse";
+    
+                                //run the query to get the warehouse
+                                $query_warehouse_select = mysqli_query($db,$sql_warehouse_select);
+    
+                                //fetch the result to an array
+                                while($row_warehouse_select = mysqli_fetch_assoc($query_warehouse_select)) {
+                                    echo "<option id ='myselect'value=".$row_warehouse_select["warehouse_id"].">".$row_warehouse_select["warehouse_name"]."</option>";
+                                }
                             ?>
                           </select>
                     

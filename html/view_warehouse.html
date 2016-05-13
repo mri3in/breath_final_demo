@@ -1,6 +1,6 @@
 <?php
     //include the definition of database
-    include('../php/session.php');
+    include('../config.php');
 
     //get the desired warehouse by warehouse_id in URL
     if (isset($_GET['warehouse_id'])) {
@@ -124,7 +124,7 @@
                             <!--display the error line of code-->
                             <div id="myForm_warehouse_name_errorloc" class="error"></div>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="warehouse_name" value="<?php echo $warehouse_name;?>"  >
+                                <input type="text" class="form-control" name="warehouse_name" value="<?php echo $warehouse_name;?>"  readonly>
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
                                 <!--display the error line of code-->
                                 <div id="myForm_warehouse_location_street_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" style="min-width:100%" class="form-control" name="warehouse_location_street" value="<?php echo $warehouse_location_street;?>" >
+                                    <input type="text" style="min-width:100%" class="form-control" name="warehouse_location_street" value="<?php echo $warehouse_location_street;?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -213,7 +213,7 @@
                             <!--display the error line of code-->
                             <div id="myForm_warehouse_capacity_errorloc" class="error"></div>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="warehouse_capacity" value="<?php echo $warehouse_capacity;?>" >
+                                <input type="text" class="form-control" name="warehouse_capacity" value="<?php echo $warehouse_capacity;?>" readonly>
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                             </div>
                         </div>
@@ -245,7 +245,7 @@
                                     while($row_item_cat_select = mysqli_fetch_assoc($query_item_cat_select)) {
                                 ?>
                                 <div class='checkbox'>
-                                    <input type='checkbox'  name='warehouse_item_category[]' value="<?php echo $row_item_cat_select['item_category_id'];?>"
+                                    <input type='checkbox'  name='warehouse_item_category[]' value="<?php echo $row_item_cat_select['item_category_id'];?>" readonly>
                                     <?php
                                         for ($i = 0; $i < count($warehouse_item_category_record ); $i++){
                                             if ($row_item_cat_select['item_category_id'] == $warehouse_item_category_record[$i]) {
@@ -256,6 +256,7 @@
                                     <?php
                                         echo ">".$row_item_cat_select["item_category_name"]."</div>";
                                         } ?>
+                                </div>
                             </div>
 
                         </div>
@@ -270,9 +271,6 @@
                             </div>
                         </div>
                     </fieldset>
-
-                    <!--submit button-->
-                    <input type="submit" name="submit" id="submit" value="Update" class="btn btn-default pull-right">
             </form>
         </div>
     </div>

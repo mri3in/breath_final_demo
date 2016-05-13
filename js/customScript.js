@@ -171,7 +171,7 @@ var message =
  * @purpose : define partials
  */
 $(function(){
-    $("#header").load("../html/partials/navigation.html");
+    $("#header").load("../html/navigation.html");
     $("#footer").load("../html/partials/footer.html");
     $("#tabItem").load("item.html");
     $("#tabWarehouse").load("warehouse.html");
@@ -1190,4 +1190,44 @@ function displayStorageLocationIdList(searchValue){
 
 function displayCurrencyRate(){
     $("#exchange_rate_display").attr({readonly : false, value : $("#exchange_rate").val(), readonly: true});
+}
+
+function displayAuthority(selectedValue, displayID){
+    //get the location of desired destination cells
+    //check if the string is empty
+    if (selectedValue === "") {
+        //alert user to input a text
+        console.log(selectedValue);
+        alert(message.displayDetails.noAttributeID);
+        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        console.log("select value: " + selectedValue);
+        //once the page is load, display the details
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var responseTextString = xmlhttp.responseText;
+                console.log(xmlhttp.responseText);
+                console.log(responseTextString);
+                //console.log("single first item: "+orderLineArray.length);
+                //console.log("single last item: "+orderLineArray[orderLineArray.length - 1]);
+                var listPages = responseTextString.split("|");
+                if (responseTextString != "") {
+                    $('#' + displayID).val(listPages).trigger("chosen:updated");
+                }
+                else
+                    $('#' + displayID).val("").trigger("chosen:updated");
+            }
+        }
+    }
+    //open file to run the search based on the params in url
+    xmlhttp.open("GET","../php/"+config.searchPHPName+".php?search="+selectedValue+"&searchType=authority",true);
+    //send the request to server
+    xmlhttp.send();
 }

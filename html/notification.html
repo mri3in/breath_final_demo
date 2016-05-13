@@ -1,0 +1,151 @@
+<?php
+    include('../php/session.php');
+  // Establishing Connection with Server by passing server_name, user_id and password as a parameter
+  //$connection = mysql_connect("localhost", "root", "");
+  // Selecting Database
+  //$db = mysql_select_db("breath", $connection);
+  
+  session_start();// Starting Session
+  
+  // Storing Session
+  $user_check=$_SESSION['login_user'];
+  
+  // SQL Query To Fetch Complete Information Of User
+  $ses_sql=mysqli_query($db,"select user_name, user_id from user where user_name='$user_check'");
+  $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+  $login_session =$row["user_name"];
+  $user_id =$row["user_id"];
+  if(!isset($login_session)){
+  mysqli_close($db); // Closing Connection
+  }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/customScript.js" defer></script>
+    <!--<script src="../lib/angular/angular.min.js"></script>-->
+    <!--<script type="text/javascript" language="javascript" src="../js/jquery.dataTables.js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">-->
+    <script src="../js/datatables.min.js"></script>
+    <title>Notification</title>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <div class="container">
+        
+        <h2 text-align="left">Your Notifications</h2><hr/>
+        
+        <?php
+                       
+                if ($user_id == "1") {
+                            //load all the order by default
+                            //run sql to select all the order
+                            $sql = "SELECT notification.notification_content, notification.notification_link, notification.notification_date, user_notification.user_id, user_notification.notification_id, user_notification.user_notification_status, user_notification.user_notification_id
+                            FROM notification
+                            JOIN user_notification
+                            ON user_notification.notification_id = notification.notification_id
+                            ORDER BY notification_date DESC";
+                            
+                            //sql for unread notification
+                            $sql_Unread = "SELECT notification.notification_content, user_notification.user_id, user_notification.notification_id, user_notification.user_notification_status, user_notification.user_notification_id
+                            FROM notification
+                            JOIN user_notification
+                            ON user_notification.notification_id = notification.notification_id
+                            WHERE user_notification_status = 'Unread'";
+                } else {
+                            //load all the order by default
+                            //run sql to select all the order
+                            $sql = "SELECT notification.notification_content, notification.notification_date, user_notification.user_id, user_notification.notification_id, user_notification.user_notification_status, user_notification.user_notification_id
+                            FROM notification
+                            JOIN user_notification
+                            ON user_notification.notification_id = notification.notification_id
+                            WHERE user_id='$user_id'
+                            ORDER BY notification_date DESC";
+                            
+                            //sql for unread notification
+                            $sql_Unread = "SELECT notification.notification_content, user_notification.user_id, user_notification.notification_id, user_notification.user_notification_status, user_notification.user_notification_id
+                            FROM notification
+                            JOIN user_notification
+                            ON user_notification.notification_id = notification.notification_id
+                            WHERE user_notification_status = 'Unread' AND user_id='$user_id'";
+                }
+                       
+            //connect to db via $db and execute the sql
+            $result = mysqli_query($db, $sql);
+            $result_Unread = mysqli_query($db, $sql_Unread);
+            
+            //if the number of results is greater than 0, generate a table and load the data to its rows
+            if (mysqli_num_rows($result) > 0) {
+        ?>
+            
+        <table class="table table-hover" style="width:85%;" align="center">
+        
+        <?php
+            // output data of each row
+            while ($row = mysqli_fetch_array($result)) {
+            
+            //add class indication for Unread and Read notification
+            if ($row['user_notification_status'] =='Unread') {
+                $addclass = "glyphicon-info-sign notibutton_2";
+            } else {
+                $addclass = "glyphicon-ok-circle notibutton_1";
+            }
+        ?>
+                
+        <tr class="notification" onclick="changeStatus(<?php echo $row['user_notification_id'];?>)">
+            <td class="<?php echo $row['user_notification_status'];?>" style="width:50px;"><a href="#" class="btn btn-circle"><span class="glyphicon <?php echo $addclass;  ?>"></span></td>
+            <td class="<?php echo $row['user_notification_status'];?>" id="<?php echo $row['user_notification_id'];?>" ><a href="#" onclick="location.href='<?php echo $row['notification_link']; ?>';"><?php echo $row['notification_content'];?></a></td>
+            <td class="<?php echo $row['user_notification_status'];?> notification_datetime" style="width:150px;"><?php echo $row['notification_date'];?> </td>                        
+            
+        </tr>
+                        
+        <?php } ?>
+                      
+            </table>
+                    
+        <?php
+            } else {
+                echo "<br/><div style='margin-right: auto; margin-left: auto; width: 200px;'>You have 0 notification.</div>";
+            }
+            
+            mysqli_close($db); // Closing Connection
+        ?>
+        
+    </div>
+
+    <div id="footer"></div>
+
+<script type="text/javascript" >
+  
+  //click to change status notification 
+  // get id of the clicked td which is the id of the notification in User_notification table
+  // send the id to notification.php
+  //source: https://codedump.io/share/r4fdUWH8BgoP/1/update-database-from-javascript-onclick-by-ajax-php
+  function changeStatus(id){
+    
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+        {
+            
+        }
+    };
+    xmlhttp.open("GET", "../php/notification.php?id=" +id, true);
+    xmlhttp.send();
+  }
+ 
+</script>
+
+</body>
+</html>

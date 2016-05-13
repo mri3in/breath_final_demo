@@ -1,24 +1,24 @@
 <?php
     //include the definition of database
-    include('../php/session.php');
+    include('../config.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  
-  <script src="../js/jquery-2.1.4.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/customScript.js"></script>
-  <script src="../lib/angular/angular.min.js"></script>
-  <script src="../js/gen_validatorv4.js"></script>
-<!--  <script src="../js/orderLineCalculate.js"></script>
-    <script src="../js/displayWarehouseDetails.js"></script>-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/customScript.js"></script>
+    <script src="../lib/angular/angular.min.js"></script>
+    <script src="../js/gen_validatorv4.js"></script>
+    <!--  <script src="../js/orderLineCalculate.js"></script>
+        <script src="../js/displayWarehouseDetails.js"></script>-->
     <script src="../js/bootbox.min.js"></script>
     <script src="../js/confirmScript.js"></script>
 
@@ -28,8 +28,8 @@
 <div id="header"></div>
 
 <div class="container">
-	
-	<?php //get the desired storage location by item_id in URL
+
+    <?php //get the desired storage location by item_id in URL
             if (isset($_GET['storage_location_id'])) {
 
                 //get the param in URL of item_id
@@ -62,12 +62,12 @@
                 $warehouse_name = "";
             }
         ?>
-	
+
     <div class="row">
         <form role="form" name="myForm" id="myForm" action="../php/edit_storage_location.php" method="post">
             <div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1">
 
-                    <h2 class="text-center">Storage Location</h2>
+                <h2 class="text-center">Storage Location</h2>
                 <!-- define the note for * symbol-->
                 <div class="well well-sm col-md-4 text-center"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
                 <!-- display the order ID -->
@@ -78,16 +78,16 @@
 
                     <label>Warehouse</label>
                     <div class="input-group">
-						<input id="warehouse_id_name" class="form-control" value="<?php echo $row['warehouse_id'].' - '.$row['warehouse_name'];?>" readonly>
+                        <input id="warehouse_id_name" class="form-control" value="<?php echo $row['warehouse_id'].' - '.$row['warehouse_name'];?>" readonly>
 
                         <!--store the value to a hidden input because disabled select is ignored during form posting-->
-                        <input name="warehouse_id" hidden value="<?php echo $row['warehouse_id'];?>">
+                        <input name="warehouse_id" hidden value="<?php echo $row['warehouse_id'];?>" readonly>
 
                         <!--run the script to load corresponding warehouse details based on the change of warehouse name-->
                         <script>
                             displayWarehouseDetails("<?php echo $row['warehouse_id'];?>");
                         </script>
-					
+
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
@@ -98,61 +98,55 @@
                 </div>
 
                 <div class="form-group ">
-                        <div class="form-group col-sm-12">
-                            <label>Storage Shelf</label>
-                            <!--display the error line of code-->
-                            <div id="myForm_storage_shelf_errorloc" class="error"></div>
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="storage_location_shelf" placeholder="Storage Location Shelf" value="<?php echo $storage_location_shelf; ?>" >
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                            </div>
+                    <div class="form-group col-sm-12">
+                        <label>Storage Shelf</label>
+                        <!--display the error line of code-->
+                        <div id="myForm_storage_shelf_errorloc" class="error"></div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="storage_location_shelf" placeholder="Storage Location Shelf" value="<?php echo $storage_location_shelf; ?>" readonly>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
-                        
-                        <div class="form-group col-sm-12">
-                            <label>Storage Row</label>
-                            <!--display the error line of code-->
-                            <div id="myForm_storage_row_errorloc" class="error"></div>
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="storage_location_row" placeholder="Storage Location Row" value="<?php echo $storage_location_row; ?>" >
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                            </div>
+                    </div>
+
+                    <div class="form-group col-sm-12">
+                        <label>Storage Row</label>
+                        <!--display the error line of code-->
+                        <div id="myForm_storage_row_errorloc" class="error"></div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="storage_location_row" placeholder="Storage Location Row" value="<?php echo $storage_location_row; ?>" readonly>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
-                        
-                        <div class="form-group col-sm-12">
-                            <label>Storage Column</label>
-                            <!--display the error line of code-->
-                            <div id="myForm_storage_column_errorloc" class="error"></div>
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="storage_location_column" placeholder="Storage Location Column" value="<?php echo $storage_location_column; ?>" >
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                            </div>
+                    </div>
+
+                    <div class="form-group col-sm-12">
+                        <label>Storage Column</label>
+                        <!--display the error line of code-->
+                        <div id="myForm_storage_column_errorloc" class="error"></div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="storage_location_column" placeholder="Storage Location Column" value="<?php echo $storage_location_column; ?>" readonly>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
-                        
-                        <div class="form-group col-sm-12">
-                            <label>Storage Condition</label>
-                            <div class="input-group">
-								<!--run script to set the default option of select box to be the corresponding status of order-->
-								<script>
-									$(document).ready(function() {
-										$("#storage_condition").val("<?php echo $row['storage_location_condition'];?>");
-									});
-								</script>
-							
-                                <select id="storage_condition" name="storage_condition" class="form-control">
-                                    <option selected disabled>--Please Select Storage Condition--</option>
-                                    <option value="Active">Active</option>
-                                    <option value="Broken">Broken</option>
-                                    <option value="Unusable">Unusable</option>
-                                </select>
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                            </div>
+                    </div>
+
+                    <div class="form-group col-sm-12">
+                        <label>Storage Condition</label>
+                        <div class="input-group">
+                            <!--run script to set the default option of select box to be the corresponding status of order-->
+                            <script>
+                                $(document).ready(function() {
+                                    $("#storage_condition").val("<?php echo $row['storage_location_condition'];?>");
+                                });
+                            </script>
+
+                            <select id="storage_condition" name="storage_condition" class="form-control">
+                                <option selected disabled>--Please Select Storage Condition--</option>
+                                <option value="Active">Active</option>
+                                <option value="Broken">Broken</option>
+                                <option value="Unusable">Unusable</option>
+                            </select>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
-                        
-                
-                <div class="clearfix"></div>
-                
-                <input type="submit" name="submit" id="submit" value="Update" class="btn btn-default pull-right">
-                
+                    </div>
                 </div>
             </div>
         </form>

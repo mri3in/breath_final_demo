@@ -1,6 +1,6 @@
 <?php
 //include the definition of database
-include('../php/session.php');
+include('../config.php');
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +19,7 @@ include('../php/session.php');
     <script src="../js/gen_validatorv4.js"></script>
     <script src="../js/bootbox.min.js"></script>
     <script src="../js/confirmScript.js"></script>
+    <script src="../js/currencyFormat.js"></script>
     
 </head>
 <body>
@@ -26,10 +27,78 @@ include('../php/session.php');
 <div id="header"></div>
 
 <div class="container">
+	
+	<?php //get the desired item by item_id in URL
+            if (isset($_GET['item_id'])) {
 
+                //get the param in URL of item_id
+                $edit_item_id = $_GET['item_id'];
+
+                //check if the id is taken correctly
+                //echo $edit_item_id;
+
+                //set up the sql to select the record that has the corresponding item_id
+                $sql = "SELECT *, item_category.item_category_name FROM item JOIN item_category ON item.item_category_id =item_category.item_category_id WHERE item_id = '$edit_item_id'";
+
+                //run the query to get the item
+                $query = mysqli_query($db,$sql) or die ("Error: Cannot edit item");
+
+                //fetch the result to an array
+                $row = mysqli_fetch_assoc($query);
+                
+                //store the data to variables
+				$item_image = $row['item_photo'];
+                $item_name = $row['item_name'];
+                $item_category = $row['item_category_id'];
+                $item_vendor = $row['item_vendor'];
+                $item_manufacturer = $row['item_manufacturer'];
+                $item_power = $row['item_power'];
+                $item_power_unit = $row['item_power_unit'];
+                $item_phase = $row['item_phase'];
+                $item_voltage_low = $row['item_voltage_low'];
+                $item_voltage_high = $row['item_voltage_high'];
+                $item_capacity = $row['item_capacity'];
+                $item_frequency = $row['item_frequency'];
+                $item_cost = $row['item_cost'];
+                $item_unit_price = $row['item_unit_price'];
+				$item_vat = $row['item_VAT'];
+				$item_area = $row['item_area'];
+				$item_quantity = $row['item_quantity'];
+				$item_unit_of_measurement = $row['item_unit_of_measurement'];
+				$item_diameter = $row['item_diameter'];
+				$item_description = $row['item_description'];
+				$item_expiry_period = $row['item_expiry_period'];
+            }
+            else
+            {
+                //if not GET method found, declare all the variables as empty to prevent error
+                $item_image = "";
+				$item_name = "";
+				$item_category = "";
+				$item_vendor = "";
+				$item_manufacturer = "";
+				$item_power = "";
+				$item_power_unit = "";
+				$item_phase = "";
+				$item_voltage_low = "";
+				$item_voltage_high = "";
+				$item_capacity = "";
+				$item_frequency = "";
+				$item_cost = "";
+				$item_unit_price = "";
+				$item_vat = "";
+				$item_area = "";
+				$item_quantity = "";
+				$item_unit_of_measurement = "";
+				$item_diameter = "";
+				$item_description = "";
+				$item_expiry_period = "";
+            }
+        ?>
+		
     <div class="row">
         <!--establish the form for item, the form will perform validation, after that, search function -->
-        <form role="form" name="myForm" id="myForm" action="../php/create_item.php" method="POST" enctype="multipart/form-data">
+        <form role="form" name="myForm" id="myForm" action="../php/view_item.php" method="post" enctype="multipart/form-data">
 
             <!--define the title of the form + the note for * symbol-->
                 <h2 class="text-center">Item</h2>
@@ -47,18 +116,18 @@ include('../php/session.php');
                         <!--display the error line of code-->
                         <div id="myForm_item_id_errorloc" class="error"></div>
                         <div class="input-group">
-                            <input type="text" class="form-control" name="item_id" placeholder="Item ID"  >
+                            <input type="text" class="form-control" name="item_id" placeholder="Item ID" value="<?php echo $edit_item_id; ?>" readonly>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
                     </div>
                     
                     <div class="form-group col-sm-6">
-                        <label>Item Photo</label>
+                        <label>Item Image</label>
                         <!--display the error line of code-->
-                        <div id="myForm_item_photo_errorloc" class="error"></div>
+                        <div id="myForm_item_image_errorloc" class="error"></div>
                         <div class="input-group">
-                            <input type="file" name="item_photo" class="form-control" rows="2">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                            <input type="file" class="form-control file" name="item_photo" placeholder="Select Picture" value="<?php echo $item_image; ?>" readonly>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
                     </div>
                     
@@ -67,7 +136,7 @@ include('../php/session.php');
                         <!--display the error line of code-->
                         <div id="myForm_item_name_errorloc" class="error"></div>
                         <div class="input-group">
-                            <input type="text" class="form-control" name="item_name" placeholder="Item Name"  >
+                            <input type="text" class="form-control" name="item_name" placeholder="Item Name" value="<?php echo $item_name; ?>" readonly>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
                     </div>
@@ -77,26 +146,10 @@ include('../php/session.php');
                         <!--display the error line of code-->
                         <div id="myForm_item_category_errorloc" class="error"></div>
                         <div class="input-group">
-                            <!--select staff on the list-->
-                            <select id="item_category_select" name="item_category" class="form-control">
-                                <option value="0" selected disabled>--Please Select Item Category--</option>
-                                <?php
-                                    //get the desired item category by category_id in URL
-
-                                    //set up the sql to select the record that has the corresponding category_id
-                                    $sql_item_category_select = "SELECT item_category.item_category_name,item_category.item_category_id FROM item_category";
-        
-                                    //run the query to get the staff
-                                    $query_item_category_select = mysqli_query($db,$sql_item_category_select);
-        
-                                    //fetch the result to an array
-                                    while($row_item_category_select = mysqli_fetch_assoc($query_item_category_select)) {
-                                        
-                                        echo "<option id ='myselect'value=".$row_item_category_select["item_category_id"].">".$row_item_category_select["item_category_name"]."</option>";
-                                    
-                                    }
-                                ?>
-                            </select>
+                            
+							<!--select staff on the list-->
+                            <input id="item_category_name" class="form-control" value="<?php echo $row['item_category_name'];?>" readonly>
+                            <input id="item_category_id" name="item_category" class="form-control" value="<?php echo $row['item_category_id'];?>" readonly>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
                     </div>
@@ -106,17 +159,17 @@ include('../php/session.php');
                         <!--display the error line of code-->
                         <div id="myForm_item_vendor_errorloc" class="error"></div>
                         <div class="input-group">
-                            <input type="text" class="form-control" name="item_vendor" placeholder="Item Vendor"  >
+                            <input type="text" class="form-control" name="item_vendor" placeholder="Item vendor" value="<?php echo $item_vendor; ?>" readonly>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
                     </div>
                     
                     <div class="form-group col-sm-6">
-                        <label>Item Manufacturer</label>
+                        <label>Item Manufaturer</label>
                         <!--display the error line of code-->
                         <div id="myForm_item_manufacturer_errorloc" class="error"></div>
                         <div class="input-group">
-                            <input type="text" class="form-control" name="item_manufacturer" placeholder="Item Manufacturer"  >
+                            <input type="text" class="form-control" name="item_manufacturer" placeholder="Item Manufacturer" value="<?php echo $item_manufacturer; ?>" readonly>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
                     </div>
@@ -147,7 +200,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_power_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_power" placeholder="Item Power" >
+                                    <input type="text" class="form-control" name="item_power" placeholder="Item Power" value="<?php echo $item_power; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -158,7 +211,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_power_unit_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_power_unit" placeholder="Item Power Unit" >
+                                    <input type="text" class="form-control" name="item_power_unit" placeholder="Item Power Unit" value="<?php echo $item_power_unit; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -169,7 +222,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_phase_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_phase" placeholder="Item Phase" >
+                                    <input type="text" class="form-control" name="item_phase" placeholder="Item Phase" value="<?php echo $item_phase; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -180,7 +233,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_voltage_low_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_voltage_low" placeholder="Item Voltage Low" >
+                                    <input type="text" class="form-control" name="item_voltage_low" placeholder="Item Voltage Low" value="<?php echo $item_voltage_low; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -191,7 +244,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_voltage_high_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_voltage_high" placeholder="Item Voltage High" >
+                                    <input type="text" class="form-control" name="item_voltage_high" placeholder="Item Voltage High" value="<?php echo $item_voltage_high; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -202,7 +255,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_capacity_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_capacity" placeholder="Item Capacity" >
+                                    <input type="text" class="form-control" name="item_capacity" placeholder="Item Capacity" value="<?php echo $item_capacity; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -213,7 +266,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_frequency_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_frequency" placeholder="Item Frequency" >
+                                    <input type="text" class="form-control" name="item_frequency" placeholder="Item Frequency" value="<?php echo $item_frequency; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -230,7 +283,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_cost_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_cost" placeholder="Item Cost" value="0" readonly >
+                                    <input type="text" id="number1" class="form-control numbers" name="item_cost" placeholder="Item Cost" value="<?php echo $item_cost; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -240,7 +293,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_unit_price_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_unit_price" placeholder="Item Unit Price"  >
+                                    <input type="text" id="number2" class="form-control numbers" name="item_unit_price" placeholder="Item Unit Price" value="<?php echo $item_unit_price; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -250,7 +303,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_vat_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_vat" placeholder="Item VAT" >
+                                    <input type="text" class="form-control" name="item_vat" placeholder="Item VAT" value="<?php echo $item_vat; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -267,7 +320,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_area_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_area" placeholder="Item Area" >
+                                    <input type="text" class="form-control" name="item_area" placeholder="Item Area" value="<?php echo $item_area; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>      
@@ -277,7 +330,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_quantity_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_quantity" placeholder="Item Quantity" value="0" readonly >
+                                    <input type="text" class="form-control" name="item_quantity" placeholder="Item Quantity" value="<?php echo $item_quantity; ?>" readonly >
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -287,7 +340,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_unit_of_measurement_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_unit_of_measurement" placeholder="Unit of Measurement" >
+                                    <input type="text" class="form-control" name="item_unit_of_measurement" placeholder="Unit of Measurement" value="<?php echo $item_unit_of_measurement; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -297,7 +350,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_diameter_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="item_diameter" placeholder="Item Diameter" >
+                                    <input type="text" class="form-control" name="item_diameter" placeholder="Item Diameter" value="<?php echo $item_diameter; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -313,7 +366,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_description_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <textarea name="item_description" class="form-control" rows="2"></textarea>
+                                    <textarea name="item_description" class="form-control" rows="2" ><?php echo $item_description; ?></textarea>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -330,7 +383,7 @@ include('../php/session.php');
                                 <!--display the error line of code-->
                                 <div id="myForm_item_expiry_period_errorloc" class="error"></div>
                                 <div class="input-group">
-                                    <input type="date" class="form-control" name="item_expiry_period" placeholder="Item Expiry Period" >
+                                    <input type="text" class="form-control" name="item_expiry_period" placeholder="Item Expiry Period" value="<?php echo $item_expiry_period; ?>" readonly>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                                 </div>
                             </div>
@@ -344,9 +397,6 @@ include('../php/session.php');
                 <div class="clearfix"></div>
                   
                 </fieldset>
-
-                <!--submit button-->
-                <input type="submit" name="submit" id="submit" value="Create" class="btn btn-default pull-right">
         </form>
     </div>
 </div>
@@ -361,39 +411,34 @@ var frmvalidator  = new Validator("myForm");
 frmvalidator.EnableOnPageErrorDisplay();
 frmvalidator.EnableMsgsTogether();
 
-frmvalidator.addValidation("item_id","req","Item Id is required");
-frmvalidator.addValidation("item_name","req","Item Name is required");
+frmvalidator.addValidation("item_name","req","Customer Name is required");
+frmvalidator.addValidation("item_long_name","req","Customer Long Name is required");
 
-frmvalidator.addValidation("item_category","req","Please select item category");
-frmvalidator.addValidation("item_vendor","req","Vendor of item is required");
-frmvalidator.addValidation("item_manufacturer","req","Manufacturer of item is required");
+frmvalidator.addValidation("item_billing_address_street","req","Billing Address is required");
+frmvalidator.addValidation("item_billing_address_city","req","Billing Address is required");
+frmvalidator.addValidation("item_billing_address_country","req","Billing Address is required");
 
-frmvalidator.addValidation("item_power","num","Item power is numeric only");
-frmvalidator.addValidation("item_power_unit","req","Please specify power unit");
-frmvalidator.addValidation("item_phase","num","Item phase is numeric only");
-frmvalidator.addValidation("item_voltage_low","num","Item voltage low is numeric only");
-frmvalidator.addValidation("item_voltage_high","num","Item voltage high is numeric only");
-frmvalidator.addValidation("item_capacity","num","Item capacity is numeric only");
-frmvalidator.addValidation("item_frequency","num","Item frequency is numeric only");
+frmvalidator.addValidation("item_tax_code","req","Tax Code is required");
+frmvalidator.addValidation("item_tax_code","num","Tax Code is numeric only");
 
-frmvalidator.addValidation("item_power","req","Please specify item power");
-frmvalidator.addValidation("item_phase","req","Please specify item phase");
-frmvalidator.addValidation("item_voltage_low","req","Please specify item voltage low");
-frmvalidator.addValidation("item_voltage_high","req","Please specify item voltage high");
-frmvalidator.addValidation("item_capacity","req","Please specify item capacity");
-frmvalidator.addValidation("item_frequency","req","Please specify item frequency");
+frmvalidator.addValidation("staff_id","req","Sale Person Accountable is required");
 
-frmvalidator.addValidation("item_unit_price","req","Please specify item unit price");
-frmvalidator.addValidation("item_vat","req","Please specify item vat");
+frmvalidator.addValidation("item_contact_person_name","req","Contact person name is required");
 
-frmvalidator.addValidation("item_area","req","Please specify item area");
-frmvalidator.addValidation("item_area","num","Item area is numeric only");
+frmvalidator.addValidation("item_contact_person_phone_number","req","Contact person phone number is required");
+frmvalidator.addValidation("item_contact_person_phone_number","phone","Contact person phone number is numeric only");
 
+frmvalidator.addValidation("item_contact_person_email","req","Contact person email is required");
+frmvalidator.addValidation("item_contact_person_email","email","Contact person email is required");
 
-frmvalidator.addValidation("item_unit_of_measurement","num","Item unit of measurement is required");
+frmvalidator.addValidation("item_shipping_address_street","req","Shipping Address Street is required");
+frmvalidator.addValidation("item_shipping_address_city","req","Shipping Address City is required");
+frmvalidator.addValidation("item_shipping_address_country","req","Shipping Address Country is required");
 
-frmvalidator.addValidation("item_diameter","req","Please specify item diameter");
-frmvalidator.addValidation("item_diameter","num","Item diameter is numeric only");
+frmvalidator.addValidation("item_credit_limit","req","Credit Limit is required");
+frmvalidator.addValidation("item_credit_limit","num","Credit Limit is required");
+
+frmvalidator.addValidation("item_payment_term","req","Payment Term is required");
 
 </script>
 

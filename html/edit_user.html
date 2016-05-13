@@ -1,6 +1,6 @@
 <?php
-    //include the definition of database
-    include('../php/session.php');
+//include the definition of database
+include('../config.php');
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +42,38 @@
     <div id="header"></div>
 
     <div class="container">
+	<?php //get the desired item by user_id in URL
+            if (isset($_GET['user_id'])) {
 
+                //get the param in URL of item_id
+                $edit_item_id = $_GET['user_id'];
+
+                //check if the id is taken correctly
+                //echo $edit_item_id;
+
+                //set up the sql to select the record that has the corresponding item_id
+                $sql = "SELECT * FROM user WHERE user_id = '$edit_user_id'";
+
+                //run the query to get the item
+                $query = mysqli_query($db,$sql) or die ("Error: Cannot edit user");
+
+                //fetch the result to an array
+                $row = mysqli_fetch_assoc($query);
+                
+                //store the data to variables
+				$user_name = $row['user_name'];
+                $user_password = $row['user_password'];
+            }
+            else
+            {
+                //if not GET method found, declare all the variables as empty to prevent error
+              	$user_name = "";
+                $user_password = "";
+            }
+        ?>
         <div class="row">
             <!--establish the form for customer, the form will perform validation, after that, search function -->
-            <form role="form" name="myForm" id="myForm" action="../php/create_user.php" method="post">
+            <form role="form" name="myForm" id="myForm" action="../php/edit_user.php" method="post">
 
                 <!--define the title of the form + the note for * symbol-->
                     <h2 class="text-center">User</h2>
@@ -63,7 +91,7 @@
                             <!--display the error line of code-->
                             <div id="myForm_user_name_errorloc" class="error"></div>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="user_name" placeholder="User Name"  >
+                                <input type="text" class="form-control" name="user_name" placeholder="User Name"  value="<?php echo $user_name; ?>">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                             </div>
 
@@ -75,7 +103,7 @@
                             <!--display the error line of code-->
                             <div id="myForm_user_password_errorloc" class="error"></div>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="user_password" placeholder="User Password" >
+                                <input type="text" class="form-control" name="user_password" placeholder="User Password" value="<?php echo $user_password; ?>" >
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                             </div>
 

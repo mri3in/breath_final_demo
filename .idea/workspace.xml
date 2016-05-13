@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="101a828e-05db-44e3-92f5-1205e42c1849" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/bike.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/chosen-sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/chosen-sprite@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/switch.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/breath_final_demo.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/chosen.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/403-no-tag.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/edit_user.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/navigation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/notification.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/versions/order.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/view_customer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/view_item.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/view_order.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/view_quotation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/view_storage_location.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/view_warehouse.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/chosen.jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/createcustomervalidation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/notification.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/angular/angular-route.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/angular/angular.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/.gitattributes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/CHANGELOG.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/barcode.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/bmp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/cssmgr.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/directw.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/gif.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/grad.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/indic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/meter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/mpdfform.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/myanmar.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/otl.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/otl_dump.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/sea.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/svg.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/tocontents.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/ttfontsuni.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/ttfontsuni_analysis.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/ucdn.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/classes/wmf.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Afrikaans_South_Africa.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Albanian_Albania.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Alsatian_France.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Algeria.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Bahrain.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Egypt.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Iraq.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Jordan.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Kuwait.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Lebanon.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Libya.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Morocco.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Oman.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Pseudo_RTL.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Qatar.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Saudi_Arabia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Syria.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Tunisia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Arabic_Yemen.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Azeri_(Cyrillic)_Azerbaijan.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Azeri_(Latin)_Azerbaijan.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Bashkir_Russia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Basque_Spain.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Belarusian_Belarus.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Bosnian_(Cyrillic)_Bosnia_and_Herzegovina.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Bosnian_(Latin)_Bosnia_and_Herzegovina.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Breton_France.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Bulgarian_Bulgaria.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Catalan_Spain.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Corsican_France.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Croatian_(Latin)_Bosnia_and_Herzegovina.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Croatian_Croatia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Czech_Czech_Republic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Danish_Denmark.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Dari_Afghanistan.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Dutch_Belgium.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Dutch_Netherlands.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Australia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Belize.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Canada.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Caribbean.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_India.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Ireland.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Jamaica.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Malaysia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_New_Zealand.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Republic_of_the_Philippines.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Singapore.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_South_Africa.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Trinidad_and_Tobago.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_United_Kingdom.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_United_States.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/English_Zimbabwe.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Estonian_Estonia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Faroese_Faroe_Islands.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Filipino_Philippines.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Finnish_Finland.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/French_Belgium.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/French_Canada.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/French_France.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/French_Luxembourg.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/French_Principality_of_Monaco.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/French_Switzerland.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Frisian_Netherlands.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/Galician_Spain.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/German_Austria.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/German_Germany.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/German_Liechtenstein.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mpdf/collations/German_Luxembourg.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/courier.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/courierb.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/courierbi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/courieri.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/helvetica.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/helveticab.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/helveticabi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/helveticai.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/symbol.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/times.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/timesb.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/timesbi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/timesi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/pdf/font/zapfdingbats.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styles.css" afterPath="$PROJECT_DIR$/css/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/403.html" afterPath="$PROJECT_DIR$/html/403.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/authority.html" afterPath="$PROJECT_DIR$/html/authority.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/create_customer.html" afterPath="$PROJECT_DIR$/html/create_customer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/create_item.html" afterPath="$PROJECT_DIR$/html/create_item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/create_order.html" afterPath="$PROJECT_DIR$/html/create_order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/create_quotation.html" afterPath="$PROJECT_DIR$/html/create_quotation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/create_storage_location.html" afterPath="$PROJECT_DIR$/html/create_storage_location.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/create_user.html" afterPath="$PROJECT_DIR$/html/create_user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/create_warehouse.html" afterPath="$PROJECT_DIR$/html/create_warehouse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/customer.html" afterPath="$PROJECT_DIR$/html/customer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/edit_customer.html" afterPath="$PROJECT_DIR$/html/edit_customer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/edit_item.html" afterPath="$PROJECT_DIR$/html/edit_item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/edit_order.html" afterPath="$PROJECT_DIR$/html/edit_order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/edit_quotation.html" afterPath="$PROJECT_DIR$/html/edit_quotation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/edit_storage_location.html" afterPath="$PROJECT_DIR$/html/edit_storage_location.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/edit_warehouse.html" afterPath="$PROJECT_DIR$/html/edit_warehouse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/inventory.html" afterPath="$PROJECT_DIR$/html/inventory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/item.html" afterPath="$PROJECT_DIR$/html/item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/item_issue.html" afterPath="$PROJECT_DIR$/html/item_issue.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/item_link.html" afterPath="$PROJECT_DIR$/html/item_link.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/item_receipt.html" afterPath="$PROJECT_DIR$/html/item_receipt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/order.html" afterPath="$PROJECT_DIR$/html/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/quotation.html" afterPath="$PROJECT_DIR$/html/quotation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/sale.html" afterPath="$PROJECT_DIR$/html/sale.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/storage_location.html" afterPath="$PROJECT_DIR$/html/storage_location.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/warehouse.html" afterPath="$PROJECT_DIR$/html/warehouse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/customScript.js" afterPath="$PROJECT_DIR$/js/customScript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/customerTable.js" afterPath="$PROJECT_DIR$/js/customerTable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/check_authority.php" afterPath="$PROJECT_DIR$/php/check_authority.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/convert_quotation.php" afterPath="$PROJECT_DIR$/php/convert_quotation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/create_customer.php" afterPath="$PROJECT_DIR$/php/create_customer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/create_item.php" afterPath="$PROJECT_DIR$/php/create_item.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/create_order.php" afterPath="$PROJECT_DIR$/php/create_order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/create_quotation.php" afterPath="$PROJECT_DIR$/php/create_quotation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/create_storage_location.php" afterPath="$PROJECT_DIR$/php/create_storage_location.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/create_warehouse.php" afterPath="$PROJECT_DIR$/php/create_warehouse.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/delete_customer.php" afterPath="$PROJECT_DIR$/php/delete_customer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/delete_item.php" afterPath="$PROJECT_DIR$/php/delete_item.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/delete_order.php" afterPath="$PROJECT_DIR$/php/delete_order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/delete_quotation.php" afterPath="$PROJECT_DIR$/php/delete_quotation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/delete_storage_location.php" afterPath="$PROJECT_DIR$/php/delete_storage_location.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/display_detail.php" afterPath="$PROJECT_DIR$/php/display_detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/edit_customer.php" afterPath="$PROJECT_DIR$/php/edit_customer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/edit_item.php" afterPath="$PROJECT_DIR$/php/edit_item.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/edit_order.php" afterPath="$PROJECT_DIR$/php/edit_order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/edit_quotation.php" afterPath="$PROJECT_DIR$/php/edit_quotation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/edit_storage_location.php" afterPath="$PROJECT_DIR$/php/edit_storage_location.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/edit_warehouse.php" afterPath="$PROJECT_DIR$/php/edit_warehouse.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/pdf/export_report.php" afterPath="$PROJECT_DIR$/php/pdf/export_report.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/pdf/load_template_quotation.php" afterPath="$PROJECT_DIR$/php/pdf/load_template_quotation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/session.php" afterPath="$PROJECT_DIR$/php/session.php" />
+    </list>
+    <ignored path="breath_final_demo.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="breath_final_demo" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="load_template_quotation.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/pdf/load_template_quotation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6810036">
+              <caret line="122" column="23" selection-start-line="115" selection-start-column="20" selection-end-line="122" selection-end-column="23" />
+              <folding>
+                <marker date="1463176854742" expanded="true" signature="1361:1426" placeholder="..." />
+                <marker date="1463176854742" expanded="true" signature="2981:3820" placeholder="SELECT quota... quotation" />
+                <marker date="1463176854742" expanded="true" signature="6523:6583" placeholder="SELECT * FRO... quotation" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/html/navigation.php" />
+        <option value="$PROJECT_DIR$/html/sale.php" />
+        <option value="$PROJECT_DIR$/html/test.php" />
+        <option value="$PROJECT_DIR$/php/session.php" />
+        <option value="$PROJECT_DIR$/html/sale.html" />
+        <option value="$PROJECT_DIR$/php/login.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/html/navigation.html" />
+        <option value="$PROJECT_DIR$/css/styles.css" />
+        <option value="$PROJECT_DIR$/css/chosen.css" />
+        <option value="$PROJECT_DIR$/php/test.php" />
+        <option value="$PROJECT_DIR$/html/test.html" />
+        <option value="$PROJECT_DIR$/html/403.html" />
+        <option value="$PROJECT_DIR$/php/save_authority.php" />
+        <option value="$PROJECT_DIR$/php/searchAuthority.php" />
+        <option value="$PROJECT_DIR$/php/display_detail.php" />
+        <option value="$PROJECT_DIR$/js/customScript.js" />
+        <option value="$PROJECT_DIR$/html/authority.html" />
+        <option value="$PROJECT_DIR$/html/quotation.html" />
+        <option value="$PROJECT_DIR$/php/check_authority.php" />
+        <option value="$PROJECT_DIR$/html/403-no-tag.html" />
+        <option value="$PROJECT_DIR$/php/pdf/export_report.php" />
+        <option value="$PROJECT_DIR$/php/pdf/load_template_quotation.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breath_final_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mobility_Long" />
+    <property name="js-jscs-nodeInterpreter" value="D:\Programs\nodejs\node.exe" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\project\breath_final_demo\html" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="101a828e-05db-44e3-92f5-1205e42c1849" name="Default" comment="" />
+      <created>1462775739150</created>
+      <option name="number" value="Default" />
+      <updated>1462775739150</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2655068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/html/create_item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/authority.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/sale.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/navigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1463130304000" expanded="true" signature="2113:2616" placeholder="SELECT notif... notification" />
+            <marker date="1463130304000" expanded="true" signature="2749:3198" placeholder="SELECT notif... notification" />
+            <marker date="1463130304000" expanded="true" signature="3392:3916" placeholder="SELECT notif... notification" />
+            <marker date="1463130304000" expanded="true" signature="4049:4521" placeholder="SELECT notif... notification" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/customScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="173" column="45" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+          <folding>
+            <marker date="1463107458000" expanded="true" signature="32:35" placeholder="//..." />
+            <marker date="1463107458000" expanded="true" signature="203:268" placeholder="select user_... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/create_item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/create_item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+          <folding>
+            <marker date="1463107458000" expanded="true" signature="32:35" placeholder="//..." />
+            <marker date="1463107458000" expanded="true" signature="203:268" placeholder="select user_... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0609319">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/edit_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1463028378000" expanded="true" signature="200:401" placeholder="UPDATE user " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/sale.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7921147">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/navigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1463130304000" expanded="true" signature="2113:2616" placeholder="SELECT notif... notification" />
+            <marker date="1463130304000" expanded="true" signature="2749:3198" placeholder="SELECT notif... notification" />
+            <marker date="1463130304000" expanded="true" signature="3392:3916" placeholder="SELECT notif... notification" />
+            <marker date="1463130304000" expanded="true" signature="4049:4521" placeholder="SELECT notif... notification" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="207" column="13" selection-start-line="207" selection-start-column="13" selection-end-line="207" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/create_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="146" column="53" selection-start-line="146" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding>
+            <marker date="1462999482000" expanded="true" signature="361:426" placeholder="select user_... user" />
+            <marker date="1462999482000" expanded="true" signature="1908:1974" placeholder="SELECT order... customer_order" />
+            <marker date="1462999482000" expanded="true" signature="2366:2986" placeholder="INSERT INTO customer_order... " />
+            <marker date="1462999482000" expanded="true" signature="3196:3294" placeholder="UPDATE quota... " />
+            <marker date="1462999482000" expanded="true" signature="3963:4041" placeholder="SELECT notif... notification" />
+            <marker date="1462999482000" expanded="true" signature="4578:5088" placeholder="INSERT INTO notification... " />
+            <marker date="1462999482000" expanded="true" signature="5831:5924" placeholder="SELECT user_... user_notification" />
+            <marker date="1462999482000" expanded="true" signature="6501:6917" placeholder="INSERT INTO user_notification... " />
+            <marker date="1462999482000" expanded="true" signature="7478:7550" placeholder="SELECT order... order_line" />
+            <marker date="1462999482000" expanded="true" signature="8064:8583" placeholder="INSERT INTO order_line... " />
+            <marker date="1462999482000" expanded="true" signature="9338:9416" placeholder="SELECT notif... notification" />
+            <marker date="1462999482000" expanded="true" signature="9946:10450" placeholder="INSERT INTO notification... " />
+            <marker date="1462999482000" expanded="true" signature="11185:11278" placeholder="SELECT user_... user_notification" />
+            <marker date="1462999482000" expanded="true" signature="11848:12260" placeholder="INSERT INTO user_notification... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/create_customer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="159" column="46" selection-start-line="147" selection-start-column="36" selection-end-line="159" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/create_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1463028378000" expanded="true" signature="158:212" placeholder="SELECT user_... user" />
+            <marker date="1463028378000" expanded="true" signature="525:698" placeholder="INSERT INTO user... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="49.153847">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/chosen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7670251">
+          <caret line="214" column="41" selection-start-line="214" selection-start-column="41" selection-end-line="214" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/create_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="29.423077">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/403.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70071685">
+          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/inventory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/searchCustomer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5483871">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1462780156000" expanded="true" signature="215:339" placeholder="SELECT *, st... customer" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/display_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7921147">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/save_authority.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3297491">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <marker date="1463171046676" expanded="true" signature="331:380" placeholder="SELECT role_... authority" />
+            <marker date="1463171046676" expanded="true" signature="331:388" placeholder="SELECT role_... authority" />
+            <marker date="1463171046676" expanded="true" signature="708:818" placeholder="UPDATE autho... " />
+            <marker date="1463171046676" expanded="true" signature="714:818" placeholder="INSERT INTO authority... " />
+            <marker date="1463171046676" expanded="true" signature="1000:1080" placeholder="INSERT INTO authority... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/searchAuthority.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4265233">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <marker date="1463171933644" expanded="true" signature="176:251" placeholder="SELECT role_... authority" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/customScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06849315">
+          <caret line="1194" column="0" selection-start-line="1194" selection-start-column="0" selection-end-line="1194" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/403-no-tag.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1218638">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/pdf/export_report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63978493">
+          <caret line="29" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <marker date="1463176125612" expanded="true" signature="298:316" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/check_authority.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8530466">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#92#0#PHP" expanded="true" />
+            <marker date="1463174532115" expanded="true" signature="119:247" placeholder="SELECT role_... authority" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/quotation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.218638">
+          <caret line="114" column="13" selection-start-line="110" selection-start-column="4" selection-end-line="114" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/authority.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2562724">
+          <caret line="79" column="142" selection-start-line="79" selection-start-column="142" selection-end-line="79" selection-end-column="142" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/pdf/load_template_quotation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6810036">
+          <caret line="122" column="23" selection-start-line="115" selection-start-column="20" selection-end-line="122" selection-end-column="23" />
+          <folding>
+            <marker date="1463176854742" expanded="true" signature="1361:1426" placeholder="..." />
+            <marker date="1463176854742" expanded="true" signature="2981:3820" placeholder="SELECT quota... quotation" />
+            <marker date="1463176854742" expanded="true" signature="6523:6583" placeholder="SELECT * FRO... quotation" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

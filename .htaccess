@@ -1,3 +1,5 @@
-AddType application/x-httpd-php .htm .html
+AddType application/x-httpd-php .htm .html .php
+AddType  application/x-httpd-php-source  .phps
+AddHandler x-mapp-php6 .php3 .php4 .php .phtml
 Options -Indexes
 ErrorDocument 403 /html/403.html
