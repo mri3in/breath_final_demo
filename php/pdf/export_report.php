@@ -16,10 +16,18 @@ $mpdf->useOnlyCoreFonts = true;    // false is default
 $mpdf->SetDisplayMode('fullpage');
 // Buffer the following html with PHP so we can store it to a variable later
 ob_start();
+$quotation_id = $_GET['quotation_id'];
 ?>
 <?php include "./load_template_quotation.php";
  //This is your php page ?>
 <?php
+//declare timezone and current date, time
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+$creationDateTime = date("Y-m-d");
+
+//declare the name of the pdf
+$name_of_pdf = "quotation_".$quotation_id."_".$creationDateTime.".pdf";
+
 $html = ob_get_contents();
 ob_end_clean();
 // send the captured HTML from the output buffer to the mPDF class for processing

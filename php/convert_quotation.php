@@ -9,6 +9,17 @@
 //Connect to database via $db
 include ('../config.php');
 
+// ---------- Get user name ----------
+session_start();// Starting Session
+// Storing Session
+$user_check=$_SESSION['login_user'];
+// SQL Query To Fetch Complete Information Of User
+$ses_sql=mysqli_query($db,"select user_name, user_id from user where user_name='$user_check'");
+$row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+$login_session =$row["user_name"];
+$user_id =$row["user_id"];
+//------------------------------------
+
 //get the desired customer by customer_id in URL
 if (isset($_GET['quotation_id'])) {
     //get the param in URL of customer_id
@@ -37,7 +48,7 @@ if (isset($_GET['quotation_id'])) {
     $creationDateTime = date("Y-m-d H:i:s");
 
     //set the variables because some variables are set by default
-    $user_id = "1";
+    //$user_id = "1";
     $order_create_date_time = $creationDateTime;
     $order_close_date_time = "";
     $order_status = "Processed";
@@ -113,6 +124,9 @@ if (isset($_GET['quotation_id'])) {
         $query_order_line = mysqli_query($db,$sql_query_order_line) or die ("Error: Cannot create order_line");
     }
 }
+
+
+
 //if success, echo the success message
 //echo "successfully create order id = " . $order_line_id[$key];
 header("Location:../html/sale.html#order");

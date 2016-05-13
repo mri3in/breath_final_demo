@@ -26,7 +26,7 @@
 
         //get the quotation_id via GET method
 //        $quotation_id_array = $_POST['quotation'];
-        $quotation_id = 1;
+//        $quotation_id = $_GET['quotation_id'];
 
         $stylesheet1 = file_get_contents('../../css/styles.css');
         $stylesheet2 = file_get_contents('../../css/bootstrap.min.css');
@@ -113,8 +113,14 @@
             <tr>
                 <td><?php echo $row["quotation_id"];?></td>
                 <td style="text-align:left">
-                    <?php echo $row["item_name"];?><br>
-                    <?php echo $row["item_description"];?>
+                    <?php echo $row["item_name"]."<br>";?><br>
+                    <?php
+                        $description = $row["item_description"];
+                        $description_text = explode("|",$description);
+                        for ($i = 0; $i < count($description_text); $i++){
+                            echo $description_text[$i]."<br>";
+                        }
+                    ;?>
                 </td>
                 <td><?php echo $row["item_manufacturer"];?></td>
                 <td><?php echo $row["quotation_line_item_quantity"];?></td>
@@ -172,13 +178,6 @@
             }
 
             mysqli_close($db); // Closing Connection
-
-            //declare timezone and current date, time
-            date_default_timezone_set("Asia/Ho_Chi_Minh");
-            $creationDateTime = date("Y-m-d");
-    
-            //declare the name of the pdf
-            $name_of_pdf = "quotation_".$creationDateTime.".pdf";
         ?>
 
         <h6 style="font-weight: bold; text-decoration: underline">NOTE:</h6>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<script type="text/javascript" >
+  $(document).ready(function()
+    {
+      $("#notificationLink").click(function()
+      {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+      });
+      
+      //Document Click hiding the popup 
+      $(document).click(function()
+      {
+        $("#notificationContainer").hide();
+      });
+      
+      //Popup on click
+      $("#notificationContainer").click(function()
+      {
+        return false;
+      });
+  
+    });
+</script>
+
+<!--navigation bar -->
+<nav class="navbar navbar-default navbar-tab navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+        </button>
+      <a class="navbar-brand" href="../index.php">BREATH</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+
+        <!-- Notification Function / Author: Lam / Source: http://www.9lessons.info/2014/09/facebook-style-notification-popup-using.html -->
+        <li class="dropdown" id="notification_li" >
+          <a href="#" id="notificationLink">
+            <i class="fa fa-bell fa-fw"></i><span class="badge badge-green" id="notification_count" >4</span></a>
+              <div id="notificationContainer">
+                <div id="notificationTitle">Notifications</div>
+                  <div id="notificationsBody" class="notifications">
+                    <?php
+                    
+                       // Define server_name, user_id and password as a parameter   
+                       define('DB_SERVER', 'localhost');
+                       define('DB_USERNAME', 'root');
+                       define('DB_PASSWORD', '');
+                       
+                       // Define Database
+                       define('DB_DATABASE', 'breath');
+                       
+                       // Establishing Connection
+                       $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+                       
+                    	// Check connection
+                    	if (!$db) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    	}
+                  
+                        //load all the order by default
+                        //run sql to select all the order
+                        $sql = "SELECT notification.notification_content FROM notification";
+                        
+                        //connect to db via $db and execute the sql
+                        $result = mysqli_query($db, $sql);
+                        
+                        
+                        //if the number of results is greater than 0, generate a table and load the data to its rows
+                        if (mysqli_num_rows($result) > 0) {
+                    ?>
+                    <table class="table">
+                        <?php
+                          // output data of each row
+                          while ($row = mysqli_fetch_array($result)) {
+                        ?>
+                        
+                        <tr>
+                          <td><?php echo $row['notification_content'];?></td>
+                        </tr>  
+                        
+                        <?php } ?>
+                      
+                    </table>
+                    
+                    <?php
+                        } else {
+                            echo "0 results";
+                        }
+                        mysqli_close($db); // Closing Connection
+                    ?>
+                      
+                  </div>
+                <div id="notificationFooter"><a href="#">See All</a></div>
+              </div>
+          
+        </li>
+        
+        <li><a href="../html/inventory.html">Inventory</a></li>
+        <li><a href="../html/sale.html">Sales</a></li>
+        <li><a href="../html/user.html">User Management</a></li>
+        <li><a href="profile.php"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+        <li><a href="../php/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>

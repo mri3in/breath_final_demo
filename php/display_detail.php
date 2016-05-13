@@ -33,6 +33,9 @@ if (isset($_GET['search']) && isset($_GET['searchType'])) {
         case 'warehouse':
             include ("./searchWarehouse.php");
             break;
+        case 'authority':
+            include ("./searchAuthority.php");
+            break;
     }
 
 }
